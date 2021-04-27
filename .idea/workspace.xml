@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/main/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/main/unit/MainSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/head/unit/MainSpec.scala" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,10 +23,14 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1rl1BMoxg9jotNA8rPme9mfHUIU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -49,13 +59,13 @@
       <recent name="$PROJECT_DIR$/src/main/resources/hanzifiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="ScalaTest.MainSpec">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <option name="MAIN_CLASS_NAME" value="head.Main" />
       <module name="Hanziscala" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="head.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,7 +109,7 @@
       </option>
       <option name="testKind" value="Class" />
       <option name="shortenClasspath" value="NONE" />
-      <option name="testClassPath" value="main.unit.MainSpec" />
+      <option name="testClassPath" value="head.unit.MainSpec" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,11 +122,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.MainSpec" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Scala REPL.scalaRepl" />
         <item itemvalue="ScalaTest.MainSpec" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="ScalaTest.MainSpec" />
       </list>
     </recent_temporary>
   </component>
@@ -129,11 +139,22 @@
       <option name="presentableId" value="Default" />
       <updated>1619535726124</updated>
       <workItem from="1619535727274" duration="466000" />
-      <workItem from="1619536217896" duration="4650000" />
+      <workItem from="1619536217896" duration="4958000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
