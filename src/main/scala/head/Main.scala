@@ -1,20 +1,28 @@
 package head
 
-object Main {
+import dataClasses.{codeToTextList, codeToTextObject}
+import imputMethodGenerator.inputMethodHandling
+import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
-  def computeNumber(): Int = 5+2
+import scala.util.matching.Regex
+
+object Main {
 
   def main(args: Array[String]): Unit = {
     println("hej lykke")
-    
-    val number = computeNumber()
-
-    val lines: String = scala.io.Source.fromFile("src/main/resources/hanzifiles/zz201906_test.txt").mkString
-
-    val eachline: Array[String] = lines.split("\n")
 
 
-    println("farvel lykke " + eachline.length)
+    val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
+      """\"[a-z]+\"=\".+""".r,
+      ",",
+      "=",
+      true,
+      "\"<>",
+      "src/main/resources/hanzifiles/zz201906_test.txt")
+
+
+
+    println("farvel lykke ")
   }
 
 }

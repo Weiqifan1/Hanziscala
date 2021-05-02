@@ -6,10 +6,10 @@ import org.scalatest.matchers.should.Matchers
 
 
 class MainSpec extends AnyFlatSpec with Matchers{
-  behavior of "com.cmlykke.scala.Main"
-  it should "compute a numer" in {
-    Main.computeNumber() shouldEqual 7
+  //behavior of "com.cmlykke.scala.Main"
+  //it should "compute a numer" in {
+  //  Main.computeNumber() shouldEqual 7
 
-  }
+  //}
 
 }
