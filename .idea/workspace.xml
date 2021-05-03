@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="renamed directory of main method">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/frequencyfiles/testJunda.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/frequencyfiles/testTzai.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextList.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/testPreparation/hashmapTestPrepare.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="zhengma test seems to work. Must create a hashmap and look into serialization">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/frequencyfiles/cedict_ts.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hanzifiles/CangJie_textRAW.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_27489CHR.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_ExtB.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_ExtCD.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hanzifiles/zz201906_allcodes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/head/unit/MainSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/head/unit/MainSpec.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/hanzifiles" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -69,8 +67,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/hanzifiles" />
+      <recent name="$PROJECT_DIR$/src/main/resources/frequencyfiles" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -87,13 +86,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,7 +154,8 @@
       <workItem from="1619636578169" duration="19000" />
       <workItem from="1619636624703" duration="1359000" />
       <workItem from="1619637999149" duration="288000" />
-      <workItem from="1619964581075" duration="15742000" />
+      <workItem from="1619964581075" duration="16195000" />
+      <workItem from="1620066646680" duration="4553000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -162,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619550256081</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="zhengma test seems to work. Must create a hashmap and look into serialization">
+      <created>1619983226598</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619983226598</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,25 +191,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="renamed directory of main method" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed directory of main method" />
+    <MESSAGE value="zhengma test seems to work. Must create a hashmap and look into serialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="zhengma test seems to work. Must create a hashmap and look into serialization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>24</line>
+          <line>40</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>13</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>11</line>
-          <option name="timeStamp" value="10" />
+          <line>36</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
