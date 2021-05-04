@@ -3,7 +3,7 @@ package head
 import dataClasses.{codeToTextList, codeToTextObject}
 import imputMethodGenerator.inputMethodHandling
 import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createTextToMultipleCodes}
-import imputMethodGenerator.jundaAndTzaiHandling.readJunda
+import imputMethodGenerator.jundaAndTzaiHandling.{getJundaCharToNumMap, getTzaiCharToNumMap}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
@@ -41,8 +41,11 @@ object Main {
     val codeToMultiText = createCodeToMultipleTexts(zhengma)
 
     //create code to handle jundaAndTzai based characters hierakies.
-    readJunda()
+    val jundaMap = getJundaCharToNumMap()
+    val tzaiMap = getTzaiCharToNumMap()
 
+    println(jundaMap.get("十"))
+    println(tzaiMap.get("十"))
 
     //create code to handle cedict translations (a primitive translation is good enough)
 

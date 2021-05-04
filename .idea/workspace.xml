@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="created a method for testing the input systems. Must be moved to the test class">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/frequencyfiles/Junda2005.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/frequencyfiles/Tzai2006.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsList.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesList.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +150,7 @@
       <workItem from="1619637999149" duration="288000" />
       <workItem from="1619964581075" duration="16195000" />
       <workItem from="1620066646680" duration="4622000" />
-      <workItem from="1620149989904" duration="4554000" />
+      <workItem from="1620149989904" duration="9306000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -180,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620071517608</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects">
+      <created>1620154650224</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620154650224</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,14 +202,15 @@
     <MESSAGE value="renamed directory of main method" />
     <MESSAGE value="zhengma test seems to work. Must create a hashmap and look into serialization" />
     <MESSAGE value="created a method for testing the input systems. Must be moved to the test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a method for testing the input systems. Must be moved to the test class" />
+    <MESSAGE value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
