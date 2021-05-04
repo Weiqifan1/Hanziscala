@@ -2,11 +2,11 @@ package head
 
 import dataClasses.{codeToTextList, codeToTextObject}
 import imputMethodGenerator.inputMethodHandling
+import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createTextToMultipleCodes}
+import imputMethodGenerator.jundaAndTzaiHandling.readJunda
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
-import java.awt.datatransfer.StringSelection
 import scala.collection.mutable.ListBuffer
-import scala.util.matching.Regex
 
 object Main {
 
@@ -31,15 +31,25 @@ object Main {
       "\"<>",
       "src/main/resources/hanzifiles/zz201906_test.txt")
 
-    println(zhengma)
-
+    //println(zhengma)
 
     val zhengmaTestResult = qualityCheckInput(zhengma)
-    println(zhengma.content.length)
-    println(zhengmaTestResult)
+    //println(zhengma.content.length)
+    //println(zhengmaTestResult)
+
+    val textToMultiCodes = createTextToMultipleCodes(zhengma)
+    val codeToMultiText = createCodeToMultipleTexts(zhengma)
+
+    //create code to handle jundaAndTzai based characters hierakies.
+    readJunda()
+
+
+    //create code to handle cedict translations (a primitive translation is good enough)
 
     println("farvel lykke ")
   }
+
+
 
   //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {

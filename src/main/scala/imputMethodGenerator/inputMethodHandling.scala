@@ -1,10 +1,57 @@
 package imputMethodGenerator
 
-import dataClasses.{codeToTextList, codeToTextObject}
+import dataClasses.{codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, textToMultipleCodesList, textToMultipleCodesObject}
+import org.graalvm.compiler.graph.Node.Input
 
+import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
 object inputMethodHandling {
+  def createTextToMultipleCodes(input: codeToTextList): textToMultipleCodesList = {
+    val listOfObject: List[codeToTextObject] = input.content
+    val finalObjectBuffer = new ListBuffer[textToMultipleCodesObject]()
+
+    for (eachObj: codeToTextObject <- listOfObject){
+      val chineseText = eachObj.hanzi
+      val codes = new ListBuffer[String]()
+      codes += eachObj.code
+      for (subObj: codeToTextObject <- listOfObject){
+        if (subObj.hanzi.equals(chineseText)){
+          codes += subObj.code
+        }
+      }
+      val actualList = codes.toSet.toList.sorted
+      val newObj = textToMultipleCodesObject(chineseText, actualList)
+      finalObjectBuffer += newObj
+    }
+
+    val finalContent = finalObjectBuffer.toSet.toList
+    val returnobject = textToMultipleCodesList(finalContent)
+    return returnobject
+  }
+
+  def createCodeToMultipleTexts(input: codeToTextList): codeToMultipleTextsList = {
+    val listOfObject: List[codeToTextObject] = input.content
+    val finalObjectBuffer = new ListBuffer[codeToMultipleTextsObject]()
+
+    for (eachObj: codeToTextObject <- listOfObject){
+      val currentcode = eachObj.code
+      val chineseTexts = new ListBuffer[String]()
+      chineseTexts += eachObj.hanzi
+      for (subObj: codeToTextObject <- listOfObject){
+        if(subObj.code.equals(currentcode)){
+          chineseTexts += subObj.hanzi
+        }
+      }
+      val actualList = chineseTexts.toSet.toList.sorted
+      val newObj = codeToMultipleTextsObject(currentcode, actualList)
+      finalObjectBuffer += newObj
+    }
+
+    val finalContent = finalObjectBuffer.toSet.toList
+    val returnObject = codeToMultipleTextsList(finalContent)
+    return returnObject
+  }
 
   def createInputMethodObject(lineRegex: Regex,
                               splitLine: String,
