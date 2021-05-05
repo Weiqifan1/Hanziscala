@@ -1,10 +1,18 @@
 package imputMethodGenerator
 
+import dataClasses.frequencyMaps
 import scala.collection.mutable.ListBuffer
-
 object jundaAndTzaiHandling {
+
+  def getJundaAndTzaiMaps(): frequencyMaps ={
+    val tzaiMap = getTzaiCharToNumMap()
+    val jundaMap = getJundaCharToNumMap()
+    val maps = frequencyMaps(tzaiMap, jundaMap)
+    return maps
+  }
+
   def getJundaCharToNumMap(): Map[String, String] ={
-    val filePath = "src/main/resources/frequencyfiles/Junda2005.txt"
+    val filePath = "src/main/resources/frequencyfilesRaw/Junda2005.txt"
     val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
 
     //foerste er en integer og anden er et tegn
@@ -14,7 +22,7 @@ object jundaAndTzaiHandling {
   }
 
   def getTzaiCharToNumMap(): Map[String, String] ={
-    val filePath = "src/main/resources/frequencyfiles/Tzai2006.txt"
+    val filePath = "src/main/resources/frequencyfilesRaw/Tzai2006.txt"
     val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
 
     //foerste er tegn andet er totale antal forekomster

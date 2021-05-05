@@ -1,9 +1,10 @@
 package head
 
 import dataClasses.{codeToTextList, codeToTextObject}
+import imputMethodGenerator.cedictHandling.getCedictHanziToTranslationMap
 import imputMethodGenerator.inputMethodHandling
 import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createTextToMultipleCodes}
-import imputMethodGenerator.jundaAndTzaiHandling.{getJundaCharToNumMap, getTzaiCharToNumMap}
+import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
@@ -20,7 +21,7 @@ object Main {
       "=",
       true,
       "\"<>",
-      "src/main/resources/hanzifiles/zz201906_allcodes.txt")
+      "src/main/resources/hanzifilesRaw/zz201906_allcodes.txt")
 */
 
     val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
@@ -29,25 +30,23 @@ object Main {
       "=",
       true,
       "\"<>",
-      "src/main/resources/hanzifiles/zz201906_test.txt")
-
-    //println(zhengma)
+      "src/main/resources/hanzifilesRaw/zz201906_test.txt")
 
     val zhengmaTestResult = qualityCheckInput(zhengma)
-    //println(zhengma.content.length)
-    //println(zhengmaTestResult)
-
     val textToMultiCodes = createTextToMultipleCodes(zhengma)
     val codeToMultiText = createCodeToMultipleTexts(zhengma)
 
     //create code to handle jundaAndTzai based characters hierakies.
-    val jundaMap = getJundaCharToNumMap()
-    val tzaiMap = getTzaiCharToNumMap()
-
-    println(jundaMap.get("十"))
-    println(tzaiMap.get("十"))
+    val frequencyMaps = getJundaAndTzaiMaps()
+    println(frequencyMaps.simplified.get("十"))
+    println(frequencyMaps.traditional.get("十"))
 
     //create code to handle cedict translations (a primitive translation is good enough)
+    val cedict = getCedictHanziToTranslationMap()
+    println(cedict.traditionalMap.get("十"))
+    println(cedict.simplifiedMap.get("十"))
+
+
 
     println("farvel lykke ")
   }
@@ -57,7 +56,7 @@ object Main {
   //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {
     val systemCharacterStrings: Set[String] = input.content.map(i => i.hanzi).toSet
-    val jundacharacters = listOf5000Simplified()//scala.io.Source.fromFile("src/main/resources/frequencyfiles/testJunda.txt").mkString.split("")
+    val jundacharacters = listOf5000Simplified()//scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testJunda.txt").mkString.split("")
     val tzaicharacters = listOf5000Traditional()
 
     var missingJunda = new ListBuffer[String]()

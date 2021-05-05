@@ -8,16 +8,15 @@ object hashmapTestPrepare {
   //    println(traditional(1))
   //    println(traditional.length)
 
-
   //create two lists of characters for use with testing hashmap
   def listOf5000Simplified(): List[String] = {
-    val lines: String = scala.io.Source.fromFile("src/main/resources/frequencyfiles/testJunda.txt").mkString
+    val lines: String = scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testJunda.txt").mkString
     val output = lines.split("").toList
     return output
   }
 
   def listOf5000Traditional(): List[String] = {
-    val lines: String = scala.io.Source.fromFile("src/main/resources/frequencyfiles/testTzai.txt").mkString
+    val lines: String = scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testTzai.txt").mkString
     val output = lines.split("").toList
     return output
   }

@@ -1,6 +1,6 @@
 package imputMethodGenerator
 
-import dataClasses.{codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, textToMultipleCodesList, textToMultipleCodesObject}
+import dataClasses.{cedictMaps, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemInfo, textToMultipleCodesList, textToMultipleCodesObject}
 import org.graalvm.compiler.graph.Node.Input
 
 import scala.collection.mutable.ListBuffer
@@ -61,7 +61,7 @@ object inputMethodHandling {
                               filepath: String): codeToTextList ={
     //val regex: Regex = """\"[a-z]+\"=\".+""".r//zhengma.lineMatchRegexList()
     val hanzilines: List[String] = scala.io.Source.fromFile(filepath).mkString.split("\n").toList
-    //scala.io.Source.fromFile("src/main/resources/hanzifiles/zz201906_test.txt").mkString.split("\n").toList
+    //scala.io.Source.fromFile("src/main/resources/hanzifilesRaw/zz201906_test.txt").mkString.split("\n").toList
     val charsToRemoveSet = removeChars.toSet//"\"<>".toSet
 
     var myobjects: List[codeToTextObject] = List()
@@ -89,5 +89,23 @@ object inputMethodHandling {
     return inputSystem
   }
 
+  //                          (hanzi: String,
+  //                           code: String,
+  //                           pronounciation: String,
+  //                           translation: String,
+  //                           traditionalFrequency: List[Int],
+  //                           simplifiedFrequency: List[Int])
+
+
+  /*
+  def createInputMethodMap(inputList: codeToTextList, cedict: cedictMaps, frequencyMaps: frequencyMaps): inputSystemCombinedMap ={
+    var mapOfObjects: ListBuffer[inputSystemInfo] = new ListBuffer[inputSystemInfo]()
+    for (eachMapping: codeToTextObject <- inputList.content){
+      val hanzi = eachMapping.hanzi
+      val code = eachMapping.code
+      val cedictObject = cedict.simplifiedMap
+    }
+  }
+*/
 
 }
