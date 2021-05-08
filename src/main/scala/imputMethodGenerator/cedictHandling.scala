@@ -9,6 +9,32 @@ import scala.collection.mutable.ListBuffer
 //cedictObject(traditionalHanzi: String, simplifiedHanzi: String, pinyin: String, translation: String)
 object cedictHandling {
 
+  def listBufferContainsCedictObject(cedictObj: cedictObject, buffer: ListBuffer[cedictObject]): Boolean ={
+    var result = false
+    for (each: cedictObject <- buffer.toList) {
+      val obj1 = cedictObj.traditionalHanzi
+      val each1 = each.traditionalHanzi
+      val first = obj1.equals(each1)
+
+      val obj2 = cedictObj.simplifiedHanzi
+      val each2 = each.simplifiedHanzi
+      val second = obj2.equals(each2)
+
+      val obj3 = cedictObj.pinyin
+      val each3 = each.pinyin
+      val third = obj3.equals(each3)
+
+      val obj4 = cedictObj.translation
+      val each4 = each.translation
+      val forth = obj4.equals(each4)
+
+      if (first && second && third && forth){
+        result = true
+      }
+    }
+    return result
+  }
+
   def createCedictMap2(objectList: List[cedictObject]): cedictMaps ={
     var protoTradMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
     var protoSimpMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
@@ -19,7 +45,7 @@ object cedictHandling {
     var currentChars: String = tradSortedObjects(0).traditionalHanzi
     var tempTrad: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
     for (eachTrad <- tradSortedObjects) {
-      if (eachTrad.traditionalHanzi.equals(currentChars) && !tempTrad.contains(eachTrad)) {
+      if (eachTrad.traditionalHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachTrad, tempTrad)) {
         val mytest = ""
         tempTrad += eachTrad
       }else {
@@ -37,7 +63,7 @@ object cedictHandling {
       if (currentChars.equals("札")){
         val string = ""
       }
-      if (eachSimp.simplifiedHanzi.equals(currentChars) && !tempSimp.contains(eachSimp)) {
+      if (eachSimp.simplifiedHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachSimp, tempSimp)) {
         val mytest = ""
         tempSimp += eachSimp
       }else {
