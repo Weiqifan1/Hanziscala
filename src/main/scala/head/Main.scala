@@ -38,16 +38,18 @@ object Main {
 */
 
     //create code to handle jundaAndTzai based characters hierakies.
+    /*
     val frequencyMaps = getJundaAndTzaiMaps()
     println(frequencyMaps.simplified.get("十"))
     println(frequencyMaps.traditional.get("十"))
-
+*/
+    /*
     //create code to handle cedict translations (a primitive translation is good enough)
     val cedict = getCedictHanziToTranslationMap()
     println(cedict.traditionalMap.get("十"))
     println(cedict.simplifiedMap.get("十"))
-
-
+*/
+    val cedict = getCedictHanziToTranslationMap()
 
     println("farvel lykke ")
   }
