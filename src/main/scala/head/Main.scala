@@ -24,6 +24,7 @@ object Main {
       "src/main/resources/hanzifilesRaw/zz201906_allcodes.txt")
 */
 
+    /*
     val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
       """\"[a-z]+\"=\".+""".r,
       ",",
@@ -31,10 +32,10 @@ object Main {
       true,
       "\"<>",
       "src/main/resources/hanzifilesRaw/zz201906_test.txt")
-
     val zhengmaTestResult = qualityCheckInput(zhengma)
     val textToMultiCodes = createTextToMultipleCodes(zhengma)
     val codeToMultiText = createCodeToMultipleTexts(zhengma)
+*/
 
     //create code to handle jundaAndTzai based characters hierakies.
     val frequencyMaps = getJundaAndTzaiMaps()

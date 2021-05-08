@@ -1,14 +1,37 @@
 package imputMethodGenerator
 
-import dataClasses.{cedictMaps, cedictObject}
+import dataClasses.{cedictMaps, cedictObject, cedictTempTuple}
 
 //cedictObject(traditionalHanzi: String, simplifiedHanzi: String, pinyin: String, translation: String)
 object cedictHandling {
 
   def getCedictHanziToTranslationMap(): cedictMaps ={
-    val filePath = "src/main/resources/frequencyfilesRaw/cedict_ts.txt"
-    val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
-    //linje eksempel: 21三體綜合症 21三体综合症 [er4 shi2 yi1 san1 ti3 zong1 he2 zheng4] /trisomy/Down's syndrome/
+    val getcedictObjecyList = getCedictObjectList()
+
+    val finalCedictMaps: cedictMaps = createCedictMap2(getcedictObjecyList)
+    val oos = new ObjectOutputStream(new FileOutputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
+    oos.writeObject(finalCedictMaps)
+    oos.close
+
+    val ois = new ObjectInputStream(new FileInputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
+    val readMapsIn = ois.readObject.asInstanceOf[cedictMaps]
+    ois.close
+
+
+
+    val tradset = getAllTradDubletWordsFromCedict(getcedictObjecyList)
+    val simpset = getAllSimpDubletWordsFromCedict(getcedictObjecyList)
+    println("dubletTradWords")
+    println(tradset.size)
+    println("dubletSimplifiedWords")
+    println(simpset.size)
+    val firstTrad = tradset.toList(0)
+    val fristsimp = simpset.toList(0)
+
+    println(readMapsIn.traditionalMap(firstTrad))
+    println(readMapsIn.simplifiedMap(fristsimp))
+    println("success")
+
 
     val splitlines = hanzilines map {line => line.split("(\\s+\\[)|(\\]\\s+)")}
     //var jundaHashmap: Map[String, cedictObject] = null

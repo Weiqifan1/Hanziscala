@@ -4,32 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="finished junda and tzai hashmaps">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/frequencyMaps.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCodeToInfoMap.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCombinedMap.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziToInfoMap.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemInfo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="ready to create a function to make input system maps">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictTempTuple.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyfiles/Junda2005.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frequencyfilesRaw/Junda2005.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyfiles/Tzai2006.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frequencyfilesRaw/Tzai2006.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyfiles/cedict_ts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frequencyfilesRaw/cedict_ts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyfiles/testJunda.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frequencyfilesRaw/testJunda.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyfiles/testTzai.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frequencyfilesRaw/testTzai.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/CangJie_textRAW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/CangJie_textRAW.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_27489CHR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/array30_27489CHR.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_ExtB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/array30_ExtB.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/array30_ExtCD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/array30_ExtCD.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/zz201906_allcodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/zz201906_allcodes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanzifiles/zz201906_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hanzifilesRaw/zz201906_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/testPreparation/hashmapTestPrepare.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/testPreparation/hashmapTestPrepare.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/head/unit/MainSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/head/unit/MainSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
+    </list>
+    <list id="f6399bbf-7582-43ce-a653-a9051bbeef0a" name="almost ready to test serialized cedict maps" comment="almost ready to test serialized cedict maps">
+      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +38,30 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
+        <range start1="4" end1="4" start2="4" end2="7" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="7" end1="7" start2="10" end2="104" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="8" end1="11" start2="105" end2="131" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
+        <range start1="12" end1="13" start2="132" end2="133" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="15" end1="15" start2="135" end2="146" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="21" end1="22" start2="152" end2="154" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="25" end1="25" start2="157" end2="158" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/scala/head/Main.scala">
+      <ranges>
+        <range start1="26" end1="26" start2="26" end2="27" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
+        <range start1="33" end1="34" start2="34" end2="34" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
+        <range start1="37" end1="37" start2="37" end2="38" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
+        <range start1="39" end1="39" start2="40" end2="41" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="42" end1="43" start2="44" end2="46" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+        <range start1="47" end1="49" start2="50" end2="52" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -104,15 +112,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,6 +182,8 @@
       <workItem from="1620066646680" duration="4622000" />
       <workItem from="1620149989904" duration="9340000" />
       <workItem from="1620237574896" duration="7268000" />
+      <workItem from="1620406820850" duration="3879000" />
+      <workItem from="1620458113761" duration="9773000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -263,7 +271,7 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>12</line>
+          <line>108</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -271,13 +279,31 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>44</line>
+          <line>47</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>50</line>
+          <line>53</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>11</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>32</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>54</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
