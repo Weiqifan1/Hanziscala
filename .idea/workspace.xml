@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="ready to create a function to make input system maps">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictTempTuple.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="my cedcit map doesnt work yest. the dublet lines doesnt get added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
-    </list>
-    <list id="f6399bbf-7582-43ce-a653-a9051bbeef0a" name="almost ready to test serialized cedict maps" comment="almost ready to test serialized cedict maps">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,30 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
-        <range start1="4" end1="4" start2="4" end2="7" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="7" end1="7" start2="10" end2="104" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="8" end1="11" start2="105" end2="131" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
-        <range start1="12" end1="13" start2="132" end2="133" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="15" end1="15" start2="135" end2="146" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="21" end1="22" start2="152" end2="154" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="25" end1="25" start2="157" end2="158" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/scala/head/Main.scala">
-      <ranges>
-        <range start1="26" end1="26" start2="26" end2="27" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
-        <range start1="33" end1="34" start2="34" end2="34" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
-        <range start1="37" end1="37" start2="37" end2="38" changelist="6f0fb244-775d-4538-b85f-869d535193a4" />
-        <range start1="39" end1="39" start2="40" end2="41" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="42" end1="43" start2="44" end2="46" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-        <range start1="47" end1="49" start2="50" end2="52" changelist="f6399bbf-7582-43ce-a653-a9051bbeef0a" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -183,7 +152,7 @@
       <workItem from="1620149989904" duration="9340000" />
       <workItem from="1620237574896" duration="7268000" />
       <workItem from="1620406820850" duration="3879000" />
-      <workItem from="1620458113761" duration="9773000" />
+      <workItem from="1620458113761" duration="13823000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -220,7 +189,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620161714223</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="my cedcit map doesnt work yest. the dublet lines doesnt get added">
+      <created>1620488734673</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620488734673</updated>
+    </task>
+    <task id="LOCAL-00007" summary="my cedict map still doesnt work">
+      <created>1620488774857</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620488774857</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +227,9 @@
     <MESSAGE value="created a method for testing the input systems. Must be moved to the test class" />
     <MESSAGE value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
     <MESSAGE value="finished junda and tzai hashmaps" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished junda and tzai hashmaps" />
+    <MESSAGE value="my cedcit map doesnt work yest. the dublet lines doesnt get added" />
+    <MESSAGE value="my cedict map still doesnt work" />
+    <option name="LAST_COMMIT_MESSAGE" value="my cedict map still doesnt work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,14 +255,6 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>108</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
           <line>47</line>
           <option name="timeStamp" value="16" />
@@ -287,23 +264,86 @@
           <line>53</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>54</line>
+          <line>61</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>114</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>139</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>113</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>63</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>55</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>56</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>59</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>19</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>137</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>37</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>40</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>43</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

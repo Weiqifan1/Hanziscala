@@ -3,6 +3,7 @@ package imputMethodGenerator
 import dataClasses.{cedictMaps, cedictObject, cedictTempTuple}
 
 import java.io.{FileInputStream, FileOutputStream, ObjectInputStream, ObjectOutputStream}
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 //cedictObject(traditionalHanzi: String, simplifiedHanzi: String, pinyin: String, translation: String)
@@ -18,10 +19,11 @@ object cedictHandling {
     var currentChars: String = tradSortedObjects(0).traditionalHanzi
     var tempTrad: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
     for (eachTrad <- tradSortedObjects) {
-      if (eachTrad.traditionalHanzi.equals(currentChars)) {
+      if (eachTrad.traditionalHanzi.equals(currentChars) && !tempTrad.contains(eachTrad)) {
+        val mytest = ""
         tempTrad += eachTrad
       }else {
-        protoTradMap += cedictTempTuple((eachTrad.traditionalHanzi, tempTrad.toList))
+        protoTradMap += cedictTempTuple((currentChars, tempTrad.toSet.toList))
         currentChars = eachTrad.traditionalHanzi
         tempTrad = new ListBuffer[cedictObject]
         tempTrad += eachTrad
@@ -29,14 +31,17 @@ object cedictHandling {
     }
     protoTradMap += cedictTempTuple((tradSortedObjects(tradSortedObjects.length-1).traditionalHanzi, List(tradSortedObjects(tradSortedObjects.length-1))))
 
-
     currentChars = simpSortedObjects(0).simplifiedHanzi
     var tempSimp: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
     for (eachSimp <- simpSortedObjects) {
-      if (eachSimp.simplifiedHanzi.equals(currentChars)) {
+      if (currentChars.equals("札")){
+        val string = ""
+      }
+      if (eachSimp.simplifiedHanzi.equals(currentChars) && !tempSimp.contains(eachSimp)) {
+        val mytest = ""
         tempSimp += eachSimp
       }else {
-        protoSimpMap += cedictTempTuple((eachSimp.traditionalHanzi, tempTrad.toList))
+        protoSimpMap += cedictTempTuple((currentChars, tempSimp.toSet.toList))
         currentChars = eachSimp.simplifiedHanzi
         tempSimp = new ListBuffer[cedictObject]
         tempSimp += eachSimp
@@ -48,9 +53,11 @@ object cedictHandling {
     val finalSimp: List[cedictTempTuple] = protoSimpMap.toList
 
     println("finalTraddoubleListlength")
-    println(finalSimp.filter(each => each.tuple._2.length > 1).length)
-    println("finalTraddoubleListlength")
-    println(finalSimp.filter(each => each.tuple._2.length > 1).length)
+    val printOutTrad = finalTrad.filter(each => each.tuple._2.length > 1)
+    println(printOutTrad.length)
+    println("finalSimpdoubleListlength")
+    val printoutSimp = finalSimp.filter(each => each.tuple._2.length > 1)
+    println(printoutSimp.length)
 
     val finalTradMap2: Map[String, List[cedictObject]] = finalTrad.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
     val finalSimpMap2: Map[String, List[cedictObject]] = finalSimp.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
@@ -60,8 +67,8 @@ object cedictHandling {
   def getAllTradDubletWordsFromCedict(objectList: List[cedictObject]): Set[String] ={
     val tradSortedObjects: List[cedictObject] = objectList.sortBy(_.traditionalHanzi)
 
-    var traditionalOldList: ListBuffer[String] = new ListBuffer[String]
-    var traditionalList: ListBuffer[String] = new ListBuffer[String]
+    var traditionalOldList: mutable.SortedSet[String] = scala.collection.mutable.SortedSet[String]()
+    var traditionalList: mutable.SortedSet[String] = scala.collection.mutable.SortedSet[String]()
 
     for (each <- tradSortedObjects) {
       if (traditionalOldList.contains(each.traditionalHanzi)) {
@@ -76,8 +83,8 @@ object cedictHandling {
   def getAllSimpDubletWordsFromCedict(objectList: List[cedictObject]): Set[String] ={
     val simpSortedObjects: List[cedictObject] = objectList.sortBy(_.simplifiedHanzi)
 
-    var simplifiedOldList: ListBuffer[String] = new ListBuffer[String]
-    var simplifiedList: ListBuffer[String] = new ListBuffer[String]
+    var simplifiedOldList: mutable.SortedSet[String] = scala.collection.mutable.SortedSet[String]()
+    var simplifiedList: mutable.SortedSet[String] = scala.collection.mutable.SortedSet[String]()
 
     for (each <- simpSortedObjects) {
       if (simplifiedOldList.contains(each.simplifiedHanzi)) {
@@ -94,8 +101,7 @@ object cedictHandling {
     val filePath = "src/main/resources/frequencyfilesRaw/cedict_ts.txt"
     val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
     val splitlines: List[Array[String]] = hanzilines map {line => line.split("(\\s+\\[)|(\\]\\s+)")}
-    var objectList: List[cedictObject] =
-      splitlines.map(each => cedictObject(each(0).toString.split("\\s")(0),
+    val objectList: List[cedictObject] = splitlines.map(each => cedictObject(each(0).toString.split("\\s")(0),
         each(0).toString.split("\\s")(1),
         each(1).toString,
         each(2).toString))
@@ -110,9 +116,13 @@ object cedictHandling {
     oos.writeObject(finalCedictMaps)
     oos.close
 
+    println("serialized cedict saved to file")
+
     val ois = new ObjectInputStream(new FileInputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
     val readMapsIn = ois.readObject.asInstanceOf[cedictMaps]
     ois.close
+
+    println("serialized cedict readIn")
 
 
 
