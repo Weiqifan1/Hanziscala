@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="simpList virker nu. jeg skal refakturere">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
     </list>
@@ -155,7 +155,7 @@
       <workItem from="1620237574896" duration="7268000" />
       <workItem from="1620406820850" duration="3879000" />
       <workItem from="1620458113761" duration="15294000" />
-      <workItem from="1620548669309" duration="4335000" />
+      <workItem from="1620548669309" duration="9507000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620495286002</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="simpList virker nu. jeg skal refakturere">
+      <created>1620553038055</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620553038055</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +255,8 @@
     <MESSAGE value="my cedict map still doesnt work" />
     <MESSAGE value="in the cedict map 1 simplified dublet is missing and the sublist sometimes contains dublets" />
     <MESSAGE value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
+    <MESSAGE value="simpList virker nu. jeg skal refakturere" />
+    <option name="LAST_COMMIT_MESSAGE" value="simpList virker nu. jeg skal refakturere" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -285,28 +293,38 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>148</line>
+          <line>141</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>171</line>
+          <line>164</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>146</line>
+          <line>140</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
-          <line>169</line>
+          <line>162</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
           <line>31</line>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>59</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <line>58</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

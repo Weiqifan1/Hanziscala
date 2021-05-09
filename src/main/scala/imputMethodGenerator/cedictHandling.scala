@@ -35,62 +35,57 @@ object cedictHandling {
     return result
   }
 
-  def createCedictMap(objectList: List[cedictObject]): cedictMaps ={
-    var protoTradMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
+  def lastHanziGroupInLoop(finalChar: String, eachObj: cedictObject, traditional: Boolean): Boolean = {
+    var result: Boolean = if (traditional) {finalChar.equals(eachObj.traditionalHanzi)} else {finalChar.equals(eachObj.simplifiedHanzi)}
+    return result
+  }
+
+  def cedictObjMatchesCurrentChar(each: cedictObject, currentChar: String, traditional: Boolean): Boolean = {
+    val objectHanzi = if (traditional) {each.traditionalHanzi} else {each.simplifiedHanzi}
+    if (objectHanzi.equals(currentChar)) {return true} else {return false}
+  }
+
+  def generateNestedCedictListTradOrSimp(objectList: List[cedictObject], traditional: Boolean): List[cedictTempTuple] = {
     var protoSimpMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
+    var tempSimp: ListBuffer[cedictObject] = new ListBuffer[cedictObject]
 
-    val tradSortedObjects: List[cedictObject] = objectList.sortBy(_.traditionalHanzi)
-    val simpSortedObjects: List[cedictObject] = objectList.sortBy(_.simplifiedHanzi)
+    val simpSortedObjects: List[cedictObject] = if (traditional) {objectList.sortBy(_.traditionalHanzi)} else {objectList.sortBy(_.simplifiedHanzi)}
+    var currentChars: String = if (traditional) { simpSortedObjects(0).traditionalHanzi} else {simpSortedObjects(0).simplifiedHanzi}
 
-    var currentChars: String = tradSortedObjects(0).traditionalHanzi
-    var tempTrad: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
-    for (eachTrad <- tradSortedObjects) {
-      if (eachTrad.traditionalHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachTrad, tempTrad)) {
-        val mytest = ""
-        tempTrad += eachTrad
-      }else {
-        protoTradMap += cedictTempTuple((currentChars, tempTrad.toSet.toList))
-        currentChars = eachTrad.traditionalHanzi
-        tempTrad = new ListBuffer[cedictObject]
-        tempTrad += eachTrad
-      }
-    }
-    protoTradMap += cedictTempTuple((tradSortedObjects(tradSortedObjects.length-1).traditionalHanzi, List(tradSortedObjects(tradSortedObjects.length-1))))
+    val finalChar: String = if (traditional) {simpSortedObjects(simpSortedObjects.length - 1).traditionalHanzi} else {simpSortedObjects(simpSortedObjects.length - 1).simplifiedHanzi}
 
-    currentChars = simpSortedObjects(0).simplifiedHanzi
-    var tempSimp: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
-
-    val finalChar = simpSortedObjects(simpSortedObjects.length-1).simplifiedHanzi
     val finalCharList: ListBuffer[cedictObject] = new ListBuffer[cedictObject]
     for (eachSimp <- simpSortedObjects) {
-      if (eachSimp.simplifiedHanzi.equals("\uD873\uDE88")){
-        val string = ""
+      if(traditional && eachSimp.traditionalHanzi.equals("誒")){
+        val temp = ""
       }
-      if (finalChar.equals(eachSimp.simplifiedHanzi)) {
+      if (lastHanziGroupInLoop(finalChar, eachSimp, traditional)) {
         finalCharList += eachSimp
       } else {
-        if (eachSimp.simplifiedHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachSimp, tempSimp)) {
-          val mytest = ""
+        if (cedictObjMatchesCurrentChar(eachSimp, currentChars, traditional) && !listBufferContainsCedictObject(eachSimp, tempSimp)) {
           tempSimp += eachSimp
-        }else {
+        } else {
           protoSimpMap += cedictTempTuple((currentChars, tempSimp.toSet.toList))
-          currentChars = eachSimp.simplifiedHanzi
+          currentChars = if (traditional) {eachSimp.traditionalHanzi} else {eachSimp.simplifiedHanzi}
           tempSimp = new ListBuffer[cedictObject]
           tempSimp += eachSimp
         }
       }
     }
     protoSimpMap += cedictTempTuple((finalChar, finalCharList.toList))
+    return protoSimpMap.toList
+  }
 
-    val finalTrad: List[cedictTempTuple] = protoTradMap.toList
-    val finalSimp: List[cedictTempTuple] = protoSimpMap.toList
+  def createCedictMap(objectList: List[cedictObject]): cedictMaps ={
+    val finalSimp: List[cedictTempTuple] = generateNestedCedictListTradOrSimp(objectList, false)
+    val finalTrad: List[cedictTempTuple] = generateNestedCedictListTradOrSimp(objectList, true)
 
-    println("finalTraddoubleListlength")
-    val printOutTrad = finalTrad.filter(each => each.tuple._2.length > 1)
-    println(printOutTrad.length)
-    println("finalSimpdoubleListlength")
-    val printoutSimp = finalSimp.filter(each => each.tuple._2.length > 1)
-    println(printoutSimp.length)
+    //println("finalTraddoubleListlength")
+    //val printOutTrad = finalTrad.filter(each => each.tuple._2.length > 1)
+    //println(printOutTrad.length)
+    //println("finalSimpdoubleListlength")
+    //val printoutSimp = finalSimp.filter(each => each.tuple._2.length > 1)
+    //println(printoutSimp.length)
 
     val finalTradMap2: Map[String, List[cedictObject]] = finalTrad.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
     val finalSimpMap2: Map[String, List[cedictObject]] = finalSimp.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
@@ -142,20 +137,18 @@ object cedictHandling {
   }
 
   def getCedictHanziToTranslationMap(): cedictMaps ={
-    val getcedictObjecyList = getCedictObjectList()
-
-    val finalCedictMaps: cedictMaps = createCedictMap(getcedictObjecyList)
-
-    val oos = new ObjectOutputStream(new FileOutputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
-    oos.writeObject(finalCedictMaps)
-    oos.close
-
-    println("serialized cedict saved to file")
+    //val getcedictObjecyList = getCedictObjectList()
+    //val finalCedictMaps: cedictMaps = createCedictMap(getcedictObjecyList)
+    //val oos = new ObjectOutputStream(new FileOutputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
+    //oos.writeObject(finalCedictMaps)
+    //oos.close
+    //println("serialized cedict saved to file")
 
     val ois = new ObjectInputStream(new FileInputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
     val readMapsIn = ois.readObject.asInstanceOf[cedictMaps]
     ois.close
-
+    return readMapsIn
+    /*
     println("serialized cedict readIn")
 
     val tradset = getAllTradDubletWordsFromCedict(getcedictObjecyList)
@@ -171,7 +164,7 @@ object cedictHandling {
     println(readMapsIn.simplifiedMap(fristsimp))
     println("success")
 
-    return null//cedictMaps(traditionalHanzi, simplifiedHanzi)
+    return null//cedictMaps(traditionalHanzi, simplifiedHanzi)*/
   }
 }
 
