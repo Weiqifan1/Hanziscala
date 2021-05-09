@@ -35,7 +35,7 @@ object cedictHandling {
     return result
   }
 
-  def createCedictMap2(objectList: List[cedictObject]): cedictMaps ={
+  def createCedictMap(objectList: List[cedictObject]): cedictMaps ={
     var protoTradMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
     var protoSimpMap: ListBuffer[cedictTempTuple] = new ListBuffer[cedictTempTuple]
 
@@ -59,21 +59,28 @@ object cedictHandling {
 
     currentChars = simpSortedObjects(0).simplifiedHanzi
     var tempSimp: ListBuffer[cedictObject] = new ListBuffer[cedictObject]//tradSortedObjects.filter(_.traditionalHanzi.equals(eachTrad.traditionalHanzi))
+
+    val finalChar = simpSortedObjects(simpSortedObjects.length-1).simplifiedHanzi
+    val finalCharList: ListBuffer[cedictObject] = new ListBuffer[cedictObject]
     for (eachSimp <- simpSortedObjects) {
-      if (currentChars.equals("札")){
+      if (eachSimp.simplifiedHanzi.equals("\uD873\uDE88")){
         val string = ""
       }
-      if (eachSimp.simplifiedHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachSimp, tempSimp)) {
-        val mytest = ""
-        tempSimp += eachSimp
-      }else {
-        protoSimpMap += cedictTempTuple((currentChars, tempSimp.toSet.toList))
-        currentChars = eachSimp.simplifiedHanzi
-        tempSimp = new ListBuffer[cedictObject]
-        tempSimp += eachSimp
+      if (finalChar.equals(eachSimp.simplifiedHanzi)) {
+        finalCharList += eachSimp
+      } else {
+        if (eachSimp.simplifiedHanzi.equals(currentChars) && !listBufferContainsCedictObject(eachSimp, tempSimp)) {
+          val mytest = ""
+          tempSimp += eachSimp
+        }else {
+          protoSimpMap += cedictTempTuple((currentChars, tempSimp.toSet.toList))
+          currentChars = eachSimp.simplifiedHanzi
+          tempSimp = new ListBuffer[cedictObject]
+          tempSimp += eachSimp
+        }
       }
     }
-    protoSimpMap += cedictTempTuple((simpSortedObjects(simpSortedObjects.length-1).simplifiedHanzi, List(simpSortedObjects(simpSortedObjects.length-1))))
+    protoSimpMap += cedictTempTuple((finalChar, finalCharList.toList))
 
     val finalTrad: List[cedictTempTuple] = protoTradMap.toList
     val finalSimp: List[cedictTempTuple] = protoSimpMap.toList
@@ -137,7 +144,8 @@ object cedictHandling {
   def getCedictHanziToTranslationMap(): cedictMaps ={
     val getcedictObjecyList = getCedictObjectList()
 
-    val finalCedictMaps: cedictMaps = createCedictMap2(getcedictObjecyList)
+    val finalCedictMaps: cedictMaps = createCedictMap(getcedictObjecyList)
+
     val oos = new ObjectOutputStream(new FileOutputStream("src/main/resources/serializedDataFiles/cedictMaps.txt"))
     oos.writeObject(finalCedictMaps)
     oos.close
@@ -150,14 +158,12 @@ object cedictHandling {
 
     println("serialized cedict readIn")
 
-
-
     val tradset = getAllTradDubletWordsFromCedict(getcedictObjecyList)
     val simpset = getAllSimpDubletWordsFromCedict(getcedictObjecyList)
     println("dubletTradWords")
-    println(tradset.size)
+    println(tradset.toSet.size)
     println("dubletSimplifiedWords")
-    println(simpset.size)
+    println(simpset.toSet.size)
     val firstTrad = tradset.toList(0)
     val fristsimp = simpset.toList(0)
 
@@ -165,28 +171,6 @@ object cedictHandling {
     println(readMapsIn.simplifiedMap(fristsimp))
     println("success")
 
-
-
-    //var jundaHashmap: Map[String, cedictObject] = null
-    //if (traditionalCharacters){
-
-    //********************************
-    // start med lister
-    //********************************
-
-    //val cedictTradMap: Map[String, List[String]] = cedictLines.map(i => i(0) -> i).toMap
-    //val cedictSimpMap: Map[String, List[String]] = cedictLines.map(i => i(1) -> i).toMap
-
-    val test: String = "hello"
-
-    /*
-    var traditionalHanzi: Map[String, cedictObject] = splitlines.map(i => i(0).split("\\s")(0) ->
-        cedictObject(i(0).split("\\s")(0), i(0).split("\\s")(1), i(1), i(2))).toMap
-    //}else {
-    var simplifiedHanzi: Map[String, cedictObject] = splitlines.map(i => i(0).split("\\s")(1) ->
-        cedictObject(i(0).split("\\s")(0), i(0).split("\\s")(1), i(1), i(2))).toMap
-    //}
-     */
     return null//cedictMaps(traditionalHanzi, simplifiedHanzi)
   }
 }
