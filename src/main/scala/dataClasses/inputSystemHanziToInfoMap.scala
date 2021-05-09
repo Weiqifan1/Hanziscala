@@ -1,3 +1,3 @@
 package dataClasses
 
-case class inputSystemHanziToInfoMap(content: Map[String, inputSystemInfo])
+case class inputSystemHanziToInfoMap(content: Map[String, inputSystemHanziInfo])

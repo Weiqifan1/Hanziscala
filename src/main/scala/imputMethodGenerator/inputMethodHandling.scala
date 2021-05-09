@@ -1,12 +1,74 @@
 package imputMethodGenerator
 
-import dataClasses.{cedictMaps, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemInfo, textToMultipleCodesList, textToMultipleCodesObject}
+import dataClasses.{cedictMaps, cedictObject, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemTemp, textToMultipleCodesList, textToMultipleCodesObject}
 import org.graalvm.compiler.graph.Node.Input
 
 import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
 object inputMethodHandling {
+
+  /*
+  case class inputSystemHanziInfo(hanzi: String,
+                                  traditional: Boolean,
+                                  simplified: Boolean,
+                                  code: String,
+                                  pronounciation: String,
+                                  translation: String,
+                                  traditionalFrequency: List[Int],
+                                  simplifiedFrequency: List[Int])*/
+/*
+  def createInputSystemMap(inputSystem: codeToTextList): Unit ={
+
+    val zhengmaAdvanced: inputSystemTemp = createNestedInputSystemListTupple(inputSystem)
+
+    val codeToList = zhengmaAdvanced.codeToList
+    val hanziToList = zhengmaAdvanced.hanziToList
+
+
+  }
+*/
+
+  def createNestedInputSystemListTupple(inputSystem: codeToTextList): inputSystemTemp = {
+    val codeFirst: List[(String, codeToTextList)] =
+      createNestedSystemListHelper(inputSystem, true)
+    val hanziFirst: List[(String, codeToTextList)] =
+      createNestedSystemListHelper(inputSystem, false)
+    val systemTemp = new inputSystemTemp(codeFirst, hanziFirst)
+    return systemTemp
+  }
+
+  def createNestedSystemListHelper(inputSystem: codeToTextList, codeFirst: Boolean): List[(String, codeToTextList)] = {
+    val codeSorted = if (codeFirst) {inputSystem.content.sortBy(_.code)} else {inputSystem.content.sortBy(_.hanzi)}
+    var codeToHanziList: ListBuffer[(String, codeToTextList)] = new ListBuffer[(String, codeToTextList)]
+    var tempList: ListBuffer[codeToTextObject] = new ListBuffer[codeToTextObject]
+    var previousCode: String = if (codeFirst) {codeSorted(0).code} else {codeSorted(0).hanzi}
+
+    val lastCode: String = if (codeFirst) {codeSorted(codeSorted.length - 1).code} else {codeSorted(codeSorted.length - 1).hanzi}
+    var last: ListBuffer[codeToTextObject] = new ListBuffer[codeToTextObject]
+    for (eachObj: codeToTextObject <- codeSorted) {
+      val currentCode = if (codeFirst) {eachObj.code} else {eachObj.hanzi}
+      if (currentCode.equals(lastCode)) {
+        val newCodeToTextTuple: (String, codeToTextList) = (previousCode, codeToTextList(tempList.toSet.toList))
+        codeToHanziList += newCodeToTextTuple
+        last += eachObj
+      } else if (currentCode.equals(previousCode)) {
+        tempList += eachObj
+      } else {
+        val newCodeToTextTuple: (String, codeToTextList) = (previousCode, codeToTextList(tempList.toSet.toList))
+        codeToHanziList += newCodeToTextTuple
+        previousCode = currentCode
+        tempList = new ListBuffer[codeToTextObject]
+        tempList += eachObj
+      }
+    }
+    val finalCodeToTextTupple: (String, codeToTextList) = (lastCode, codeToTextList(last.toSet.toList))
+    codeToHanziList += finalCodeToTextTupple
+
+    val result = codeToHanziList.toList
+    return result
+  }
+
   def createTextToMultipleCodes(input: codeToTextList): textToMultipleCodesList = {
     val listOfObject: List[codeToTextObject] = input.content
     val finalObjectBuffer = new ListBuffer[textToMultipleCodesObject]()
@@ -53,6 +115,7 @@ object inputMethodHandling {
     return returnObject
   }
 
+
   def createInputMethodObject(lineRegex: Regex,
                               splitLine: String,
                               splitCodeAndText: String,
@@ -88,24 +151,29 @@ object inputMethodHandling {
     val inputSystem = codeToTextList(myobjects)
     return inputSystem
   }
-
-  //                          (hanzi: String,
-  //                           code: String,
-  //                           pronounciation: String,
-  //                           translation: String,
-  //                           traditionalFrequency: List[Int],
-  //                           simplifiedFrequency: List[Int])
+}
 
 
-  /*
+/*
   def createInputMethodMap(inputList: codeToTextList, cedict: cedictMaps, frequencyMaps: frequencyMaps): inputSystemCombinedMap ={
-    var mapOfObjects: ListBuffer[inputSystemInfo] = new ListBuffer[inputSystemInfo]()
+    var mapOfObjects: ListBuffer[inputSystemHanziInfo] = new ListBuffer[inputSystemHanziInfo]()
     for (eachMapping: codeToTextObject <- inputList.content){
       val hanzi = eachMapping.hanzi
       val code = eachMapping.code
-      val cedictObject = cedict.simplifiedMap
-    }
-  }
-*/
+      val cedictSimpObjects: List[cedictObject] = cedict.simplifiedMap(hanzi)
+      val cedictTradObjects: List[cedictObject] = cedict.traditionalMap(hanzi)
+      val simp = if (cedictSimpObjects.nonEmpty) {true} else {false}
+      val trad = if (cedictTradObjects.nonEmpty) {true} else {false}
 
-}
+    }
+    return null
+  }
+
+  //                                hanzi: String,
+  //                                traditional: Boolean,
+  //                                simplified: Boolean,
+  //                                code: String,
+  //                                pronounciation: String,
+  //                                translation: String,
+  //                                traditionalFrequency: List[Int],
+  //                                simplifiedFrequency: List[Int]*/

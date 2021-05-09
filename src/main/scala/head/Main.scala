@@ -1,9 +1,9 @@
 package head
 
-import dataClasses.{codeToTextList, codeToTextObject}
+import dataClasses.{codeToTextList, codeToTextObject, inputSystemTemp}
 import imputMethodGenerator.cedictHandling.getCedictHanziToTranslationMap
 import imputMethodGenerator.inputMethodHandling
-import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createTextToMultipleCodes}
+import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createNestedInputSystemListTupple, createTextToMultipleCodes}
 import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
@@ -13,8 +13,9 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("hej lykke")
+    //val cedict = getCedictHanziToTranslationMap()
+    //val frequencyMapsObj = getJundaAndTzaiMaps()
 
-/*
     val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
       """\"[a-z]+\"=\".+""".r,
       ",",
@@ -22,7 +23,12 @@ object Main {
       true,
       "\"<>",
       "src/main/resources/hanzifilesRaw/zz201906_allcodes.txt")
-*/
+
+    val zhengmaAdvanced: inputSystemTemp = createNestedInputSystemListTupple(zhengma)
+
+
+
+    println("end")
 
     /*
     val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
@@ -49,7 +55,6 @@ object Main {
     println(cedict.traditionalMap.get("十"))
     println(cedict.simplifiedMap.get("十"))
 */
-    val cedict = getCedictHanziToTranslationMap()
 
     println("farvel lykke ")
   }

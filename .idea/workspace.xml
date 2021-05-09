@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="simpList virker nu. jeg skal refakturere">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="cedict map works">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemTemp.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCodeToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCodeToInfoMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziToInfoMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
       <workItem from="1620237574896" duration="7268000" />
       <workItem from="1620406820850" duration="3879000" />
       <workItem from="1620458113761" duration="15294000" />
-      <workItem from="1620548669309" duration="9507000" />
+      <workItem from="1620548669309" duration="20538000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -227,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620553038055</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="cedict map works">
+      <created>1620559215582</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620559215582</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,39 +268,40 @@
     <MESSAGE value="in the cedict map 1 simplified dublet is missing and the sublist sometimes contains dublets" />
     <MESSAGE value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
     <MESSAGE value="simpList virker nu. jeg skal refakturere" />
-    <option name="LAST_COMMIT_MESSAGE" value="simpList virker nu. jeg skal refakturere" />
+    <MESSAGE value="cedict map works" />
+    <option name="LAST_COMMIT_MESSAGE" value="cedict map works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>34</line>
+          <line>40</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>28</line>
+          <line>90</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>35</line>
+          <line>41</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>36</line>
+          <line>42</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>47</line>
+          <line>53</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>53</line>
+          <line>58</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -316,15 +329,20 @@
           <line>31</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
           <line>59</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
           <line>58</line>
           <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
+          <line>30</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
