@@ -86,19 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="scalaRepl" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Hanziscala" />
       <option name="allowRunningInParallel" value="false" />
@@ -123,7 +110,7 @@
       <option name="testKind" value="Class" />
       <option name="shortenClasspath" value="NONE" />
       <option name="testClassPath" value="head.unit.MainSpec" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\Users\Christian\IdeaProjects\Hanziscala" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

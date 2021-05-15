@@ -1,10 +1,14 @@
 package dataClasses
 
+import upickle.default.{ReadWriter => RW, macroRW}
+
 case class inputSystemHanziInfo(hanzi: String,
-                                traditional: Boolean,
-                                simplified: Boolean,
-                                code: String,
-                                pronounciation: String,
-                                translation: String,
-                                traditionalFrequency: List[Int],
-                                simplifiedFrequency: List[Int])
+                                codes: List[String],
+                                cedictSimp: Option[List[cedictObject]],
+                                cedictTrad: Option[List[cedictObject]],
+                                traditionalFrequency: List[String],
+                                simplifiedFrequency: List[String])
+/*
+object inputSystemHanziInfo{
+  implicit val rw: RW[inputSystemHanziInfo] = macroRW
+}*/

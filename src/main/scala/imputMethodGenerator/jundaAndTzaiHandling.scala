@@ -17,7 +17,8 @@ object jundaAndTzaiHandling {
 
     //foerste er en integer og anden er et tegn
     val splitlines = hanzilines map {line => line.split("\\s+").slice(0,2)}
-    val jundaHashmap = splitlines.map(i => i(1) -> i(0)).toMap
+
+    val jundaHashmap = splitlines.map(i => i(1).trim -> i(0).trim).toMap
     return jundaHashmap
   }
 
@@ -35,7 +36,7 @@ object jundaAndTzaiHandling {
       updatedSplitLines += List(eachLine(0), i.toString)
     }
     val finalList = updatedSplitLines.toList
-    val jundaHashmap = finalList.map(i => i(0).toString -> i(1).toString).toMap
+    val jundaHashmap = finalList.map(i => i(0).trim -> i(1).trim).toMap
 
     return jundaHashmap
   }

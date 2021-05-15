@@ -1,10 +1,13 @@
 package head
 
-import dataClasses.{codeToTextList, codeToTextObject, inputSystemTemp}
-import imputMethodGenerator.cedictHandling.getCedictHanziToTranslationMap
+import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemTemp}
+import imputMethodGenerator.cedictHandling.{createCedictMap, getCedict, getCedictHanziToTranslationMap}
 import imputMethodGenerator.inputMethodHandling
-import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createNestedInputSystemListTupple, createTextToMultipleCodes}
+import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createNestedInputSystemListTupple, createTextToMultipleCodes, frequencyInfoTraditionalFromString, generateInputSystemMap}
 import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
+import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile, serializeCedict, serializeJundaAndTzai}
+import serialization.InputSystemSerialization.{readInputSystemFromFileWithBinary, readInputSystemFromFileWithJava, serializeInputSystems}
+import services.inputMethodService.getSortedInfoListsFromCodes
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
@@ -13,48 +16,11 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("hej lykke")
-    //val cedict = getCedictHanziToTranslationMap()
-    //val frequencyMapsObj = getJundaAndTzaiMaps()
 
-    val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
-      """\"[a-z]+\"=\".+""".r,
-      ",",
-      "=",
-      true,
-      "\"<>",
-      "src/main/resources/hanzifilesRaw/zz201906_allcodes.txt")
+    //serializeInputSystems()
+    val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
 
-    val zhengmaAdvanced: inputSystemTemp = createNestedInputSystemListTupple(zhengma)
-
-
-
-    println("end")
-
-    /*
-    val zhengma: codeToTextList = inputMethodHandling.createInputMethodObject(
-      """\"[a-z]+\"=\".+""".r,
-      ",",
-      "=",
-      true,
-      "\"<>",
-      "src/main/resources/hanzifilesRaw/zz201906_test.txt")
-    val zhengmaTestResult = qualityCheckInput(zhengma)
-    val textToMultiCodes = createTextToMultipleCodes(zhengma)
-    val codeToMultiText = createCodeToMultipleTexts(zhengma)
-*/
-
-    //create code to handle jundaAndTzai based characters hierakies.
-    /*
-    val frequencyMaps = getJundaAndTzaiMaps()
-    println(frequencyMaps.simplified.get("十"))
-    println(frequencyMaps.traditional.get("十"))
-*/
-    /*
-    //create code to handle cedict translations (a primitive translation is good enough)
-    val cedict = getCedictHanziToTranslationMap()
-    println(cedict.traditionalMap.get("十"))
-    println(cedict.simplifiedMap.get("十"))
-*/
+    val result = getSortedInfoListsFromCodes(List("ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
 
     println("farvel lykke ")
   }
@@ -62,6 +28,7 @@ object Main {
 
 
   //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
+
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {
     val systemCharacterStrings: Set[String] = input.content.map(i => i.hanzi).toSet
     val jundacharacters = listOf5000Simplified()//scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testJunda.txt").mkString.split("")

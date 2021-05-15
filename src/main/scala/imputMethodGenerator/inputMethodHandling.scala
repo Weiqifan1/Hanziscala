@@ -1,8 +1,9 @@
 package imputMethodGenerator
 
-import dataClasses.{cedictMaps, cedictObject, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemTemp, textToMultipleCodesList, textToMultipleCodesObject}
+import dataClasses.{cedictMaps, cedictObject, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCodeToInfoMap, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList, inputSystemHanziToInfoMap, inputSystemTemp, textToMultipleCodesList, textToMultipleCodesObject}
 import org.graalvm.compiler.graph.Node.Input
 
+import java.util.stream.IntStream
 import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
@@ -135,13 +136,13 @@ object inputMethodHandling {
         for (part <- listOf1ormany){
           val subListOf2 = part.split(splitCodeAndText).toList
           if (codeFirst){
-            val firstStr: String = subListOf2(0).filterNot(charsToRemoveSet)
-            val secondStr: String = subListOf2(1).filterNot(charsToRemoveSet)
+            val firstStr: String = subListOf2(0).filterNot(charsToRemoveSet).trim
+            val secondStr: String = subListOf2(1).filterNot(charsToRemoveSet).trim
             val codeToText = codeToTextObject(firstStr, secondStr)
             myobjects ::= codeToText
           }else {
-            val firstStr: String = subListOf2(1).filterNot(charsToRemoveSet)
-            val secondStr: String = subListOf2(0).filterNot(charsToRemoveSet)
+            val firstStr: String = subListOf2(1).filterNot(charsToRemoveSet).trim
+            val secondStr: String = subListOf2(0).filterNot(charsToRemoveSet).trim
             val codeToText = codeToTextObject(firstStr, secondStr)
             myobjects ::= codeToText
           }
@@ -151,6 +152,83 @@ object inputMethodHandling {
     val inputSystem = codeToTextList(myobjects)
     return inputSystem
   }
+
+
+  /* inputSystemHanziInfo     (hanzi: String,
+                                code: String,
+                                cedict: cedictObject,
+                                traditionalFrequency: List[Int],
+                                simplifiedFrequency: List[Int])*/
+
+  def generateInputSystemMap(inputSystem: inputSystemTemp, cedict: cedictMaps, frequency: frequencyMaps): inputSystemCombinedMap = {
+    val inputSystemCodeContent: List[(String, inputSystemHanziInfoList)]  =
+      inputSystem.codeToList.map(i => {
+        val code: String = i._1
+        val subcontent: List[codeToTextObject] = i._2.content
+        val codes: List[String] =  subcontent.map(cTot => cTot.code).toSet.toList
+        val listOfStrings: List[inputSystemHanziInfo] = subcontent.map(k => {
+          val hanzi: String = k.hanzi
+          //val code: String = k.code
+          val cedictSimp: Option[List[cedictObject]] = cedict.simplifiedMap.get(hanzi)
+          val cedictTrad: Option[List[cedictObject]] = cedict.traditionalMap.get(hanzi)
+          val traditionalFrequency: List[String] = frequencyInfoTraditionalFromString(hanzi, frequency)
+          val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString(hanzi, frequency)
+          inputSystemHanziInfo(hanzi, codes, cedictSimp, cedictTrad, traditionalFrequency, simplifiedFrequency)
+          })
+        val infoList = inputSystemHanziInfoList(listOfStrings)
+        (code, infoList)
+      })
+
+    val inputSystemHanziContent: List[(String, inputSystemHanziInfoList)]  =
+      inputSystem.hanziToList.map(i => {
+        val hanzi: String = i._1
+        val subcontent: List[codeToTextObject] = i._2.content
+        val codes: List[String] =  subcontent.map(cTot => cTot.code).toSet.toList
+        val listOfStrings: List[inputSystemHanziInfo] = subcontent.map(k => {
+          val hanzi: String = k.hanzi
+          //val code: String = k.code
+          val cedictSimp: Option[List[cedictObject]] = cedict.simplifiedMap.get(hanzi)
+          val cedictTrad: Option[List[cedictObject]] = cedict.traditionalMap.get(hanzi)
+          val traditionalFrequency: List[String] = frequencyInfoTraditionalFromString(hanzi, frequency)
+          val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString(hanzi, frequency)
+          inputSystemHanziInfo(hanzi, codes, cedictSimp, cedictTrad, traditionalFrequency, simplifiedFrequency)
+        })
+        val infoList = inputSystemHanziInfoList(listOfStrings)
+        (hanzi, infoList)
+      })
+
+    //finalSimp.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
+    val codeMap: Map[String, inputSystemHanziInfoList] = inputSystemCodeContent.map(i => i._1 -> i._2).toMap
+    val codeMapObj = inputSystemCodeToInfoMap(codeMap)
+
+    val hanziMap: Map[String, inputSystemHanziInfoList] = inputSystemHanziContent.map(i => i._1 -> i._2).toMap
+    val hanziMapObj = inputSystemHanziToInfoMap(hanziMap)
+
+    val result = inputSystemCombinedMap(codeMapObj, hanziMapObj)
+    return result
+  }
+
+  def frequencyInfoTraditionalFromString(inputHanziString: String, frequency: frequencyMaps): List[String] = {
+    val stream: List[Int] = inputHanziString.codePoints.toArray.toList
+    val backToString: List[String] = stream.map(i => Character.toChars(i).mkString)
+    val traditional: List[String] = backToString.map(i => {
+      val lookupResult: Option[String] = frequency.traditional.get(i)
+      if (lookupResult.nonEmpty){lookupResult.get}else{"0"}
+    })
+    return traditional
+  }
+
+  def frequencyInfoSimplifiedFromString(inputHanziString: String, frequency: frequencyMaps): List[String] = {
+    val stream: List[Int] = inputHanziString.codePoints.toArray.toList
+    val backToString: List[String] = stream.map(i => Character.toChars(i).mkString)
+    val simplified: List[String] = backToString.map(i => {
+      val lookupResult: Option[String] = frequency.simplified.get(i)
+      if (lookupResult.nonEmpty){lookupResult.get}else{"0"}
+    })
+    return simplified
+  }
+
+
 }
 
 

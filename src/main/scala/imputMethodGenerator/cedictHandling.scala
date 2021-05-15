@@ -136,6 +136,12 @@ object cedictHandling {
     return objectList
   }
 
+  def getCedict(): cedictMaps = {
+    val objectList = getCedictObjectList()
+    val getFinalMap = createCedictMap(objectList)
+    return getFinalMap
+  }
+
   def getCedictHanziToTranslationMap(): cedictMaps ={
     //val getcedictObjecyList = getCedictObjectList()
     //val finalCedictMaps: cedictMaps = createCedictMap(getcedictObjecyList)
