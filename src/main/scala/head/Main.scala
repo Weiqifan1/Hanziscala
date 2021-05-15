@@ -7,7 +7,7 @@ import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, crea
 import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
 import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile, serializeCedict, serializeJundaAndTzai}
 import serialization.InputSystemSerialization.{readInputSystemFromFileWithBinary, readInputSystemFromFileWithJava, serializeInputSystems}
-import services.inputMethodService.getSortedInfoListsFromCodes
+import services.inputMethodService.{getSortedInfoListsFromCodes, printableCodeListResults}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
@@ -20,7 +20,11 @@ object Main {
     //serializeInputSystems()
     val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
 
-    val result = getSortedInfoListsFromCodes(List("ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
+    val result = getSortedInfoListsFromCodes(List("zz", "ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
+
+    val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
+
+    println(printing)
 
     println("farvel lykke ")
   }

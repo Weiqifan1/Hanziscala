@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="cedict map works">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="added jar.xml files. These should be in git ignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hanziFilesSerialized/zhengmaSerialized.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620559215582</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added jar.xml files. These should be in git ignore">
+      <created>1621100896451</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621100896451</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,25 +279,16 @@
     <MESSAGE value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
     <MESSAGE value="simpList virker nu. jeg skal refakturere" />
     <MESSAGE value="cedict map works" />
-    <option name="LAST_COMMIT_MESSAGE" value="cedict map works" />
+    <MESSAGE value="added jar.xml files. These should be in git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added jar.xml files. These should be in git ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>23</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
           <line>91</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>24</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
@@ -324,10 +325,38 @@
           <line>58</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
+          <line>26</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
+          <line>29</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
+          <line>31</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
+          <line>182</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>19</line>
-          <option name="timeStamp" value="93" />
+          <line>28</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
+          <line>24</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
