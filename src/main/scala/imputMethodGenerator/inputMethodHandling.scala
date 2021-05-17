@@ -30,14 +30,6 @@ object inputMethodHandling {
   }
 */
 
-  def createNestedInputSystemListTupple(inputSystem: codeToTextList): inputSystemTemp = {
-    val codeFirst: List[(String, codeToTextList)] =
-      createNestedSystemListHelper(inputSystem, true)
-    val hanziFirst: List[(String, codeToTextList)] =
-      createNestedSystemListHelper(inputSystem, false)
-    val systemTemp = new inputSystemTemp(codeFirst, hanziFirst)
-    return systemTemp
-  }
 
   def createNestedSystemListHelper(inputSystem: codeToTextList, codeFirst: Boolean): List[(String, codeToTextList)] = {
     val codeSorted = if (codeFirst) {inputSystem.content.sortBy(_.code)} else {inputSystem.content.sortBy(_.hanzi)}
@@ -161,11 +153,18 @@ object inputMethodHandling {
                                 traditionalFrequency: List[Int],
                                 simplifiedFrequency: List[Int])*/
 
-  def generateInputSystemMap(inputSystem: inputSystemTemp, cedict: cedictMaps, frequency: frequencyMaps): inputSystemCombinedMap = {
+
+  def getCodeListFromtempMap(codeList: codeToTextList): List[String] ={
+    var li_buffer: List[String] = codeList.content.map{i => i.code}.toSet.toList
+    return li_buffer
+  }
+
+  def generateInputSystemMapCode(inputSystem: inputSystemTemp, cedict: cedictMaps, frequency: frequencyMaps, temphanzimap: Map[String, codeToTextList]): inputSystemCodeToInfoMap = {
     val inputSystemCodeContent: List[(String, inputSystemHanziInfoList)]  =
       inputSystem.codeToList.map(i => {
         val code: String = i._1
         val subcontent: List[codeToTextObject] = i._2.content
+        //getCodeListFromtempMap(temphanzimap.get(code).get)
         val codes: List[String] =  subcontent.map(cTot => cTot.code).toSet.toList
         val listOfStrings: List[inputSystemHanziInfo] = subcontent.map(k => {
           val hanzi: String = k.hanzi
@@ -174,12 +173,20 @@ object inputMethodHandling {
           val cedictTrad: Option[List[cedictObject]] = cedict.traditionalMap.get(hanzi)
           val traditionalFrequency: List[String] = frequencyInfoTraditionalFromString(hanzi, frequency)
           val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString(hanzi, frequency)
-          inputSystemHanziInfo(hanzi, codes, cedictSimp, cedictTrad, traditionalFrequency, simplifiedFrequency)
-          })
+          inputSystemHanziInfo(hanzi, getCodeListFromtempMap(temphanzimap.get(hanzi).get), cedictSimp, cedictTrad, traditionalFrequency, simplifiedFrequency)
+        })
         val infoList = inputSystemHanziInfoList(listOfStrings)
         (code, infoList)
       })
 
+    //finalSimp.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
+    val codeMap: Map[String, inputSystemHanziInfoList] = inputSystemCodeContent.map(i => i._1 -> i._2).toMap
+    val codeMapObj: inputSystemCodeToInfoMap = inputSystemCodeToInfoMap(codeMap)
+
+    return codeMapObj
+  }
+
+  def generateInputSystemMapHanzi(inputSystem: inputSystemTemp, cedict: cedictMaps, frequency: frequencyMaps): inputSystemHanziToInfoMap = {
     val inputSystemHanziContent: List[(String, inputSystemHanziInfoList)]  =
       inputSystem.hanziToList.map(i => {
         val hanzi: String = i._1
@@ -198,15 +205,10 @@ object inputMethodHandling {
         (hanzi, infoList)
       })
 
-    //finalSimp.map(tup => tup.tuple._1 -> tup.tuple._2).toMap
-    val codeMap: Map[String, inputSystemHanziInfoList] = inputSystemCodeContent.map(i => i._1 -> i._2).toMap
-    val codeMapObj = inputSystemCodeToInfoMap(codeMap)
-
     val hanziMap: Map[String, inputSystemHanziInfoList] = inputSystemHanziContent.map(i => i._1 -> i._2).toMap
-    val hanziMapObj = inputSystemHanziToInfoMap(hanziMap)
+    val hanziMapObj: inputSystemHanziToInfoMap = inputSystemHanziToInfoMap(hanziMap)
 
-    val result = inputSystemCombinedMap(codeMapObj, hanziMapObj)
-    return result
+    return hanziMapObj
   }
 
   def frequencyInfoTraditionalFromString(inputHanziString: String, frequency: frequencyMaps): List[String] = {

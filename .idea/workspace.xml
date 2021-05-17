@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyFilesSerialized/cedictSerialized_cedictMaps.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frequencyFilesSerialized/jundaAndTzaiSerialized_frequencyMaps.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/FrequencyFileSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/serialization/FrequencyFileSerialization.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +175,7 @@
       <workItem from="1620458113761" duration="15294000" />
       <workItem from="1620548669309" duration="20538000" />
       <workItem from="1621113952010" duration="74000" />
-      <workItem from="1621261611359" duration="8904000" />
+      <workItem from="1621261611359" duration="12830000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -280,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621263941316</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed">
+      <created>1621276581568</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621276581568</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,14 +315,15 @@
     <MESSAGE value="added jar.xml files. These should be in git ignore" />
     <MESSAGE value="can print to screen" />
     <MESSAGE value="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi" />
-    <option name="LAST_COMMIT_MESSAGE" value="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi" />
+    <MESSAGE value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>91</line>
+          <line>83</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -360,26 +363,13 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
-          <line>26</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
-          <line>29</line>
+          <line>42</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
-          <line>31</line>
+          <line>44</line>
           <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>183</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
@@ -442,10 +432,15 @@
           </properties>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
+          <line>119</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>127</line>
-          <option name="timeStamp" value="149" />
+          <line>167</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
