@@ -8,6 +8,11 @@ import java.io.{File, FileInputStream, FileOutputStream, ObjectInputStream, Obje
 
 object FrequencyFileSerialization {
 
+  def serializeCedictAndFrequencyFiles(): Unit ={
+    serializeJundaAndTzai()
+    serializeCedict()
+  }
+
   def serializeJundaAndTzai(): Unit = {
     val frequencyMap = getJundaAndTzaiMaps()
     val outputFile = new File("src/main/resources/frequencyFilesSerialized/jundaAndTzaiSerialized_frequencyMaps.txt")

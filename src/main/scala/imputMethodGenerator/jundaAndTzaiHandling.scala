@@ -11,9 +11,25 @@ object jundaAndTzaiHandling {
     return maps
   }
 
+  def removeInitialByteOrderMarkEct(input: String): String ={
+    //Zero Width No-Break Space: 65279
+    val badCharacters: List[Int] = List(65279)
+    val firstCharacter: Int = input.chars().findFirst().getAsInt
+    var inputWithoutBom: String = ""
+    if (!badCharacters.contains(firstCharacter)) {
+      inputWithoutBom = input
+    }else {
+      inputWithoutBom = input.substring(1)
+    }
+    return inputWithoutBom
+  }
+
   def getJundaCharToNumMap(): Map[String, String] ={
     val filePath = "src/main/resources/frequencyfilesRaw/Junda2005.txt"
-    val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
+    val rawInputFromFile: String = scala.io.Source.fromFile(filePath).mkString
+    val inputWithoutBom: String = removeInitialByteOrderMarkEct(rawInputFromFile)
+
+    val hanzilines: List[String] = inputWithoutBom.split("\n").toList
 
     //foerste er en integer og anden er et tegn
     val splitlines = hanzilines map {line => line.split("\\s+").slice(0,2)}
@@ -24,7 +40,10 @@ object jundaAndTzaiHandling {
 
   def getTzaiCharToNumMap(): Map[String, String] ={
     val filePath = "src/main/resources/frequencyfilesRaw/Tzai2006.txt"
-    val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
+
+    val rawInputFromFile: String = scala.io.Source.fromFile(filePath).mkString
+    val inputWithoutBom: String = removeInitialByteOrderMarkEct(rawInputFromFile)
+    val hanzilines: List[String] = inputWithoutBom.split("\n").toList
 
     //foerste er tegn andet er totale antal forekomster
     var i = 0

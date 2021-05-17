@@ -8,8 +8,6 @@ import scala.math.Ordering.Implicits.seqOrdering
 
 object inputMethodService {
 
-
-
   def printableCodeListResults(codes: List[String], inputSystem: inputSystemCombinedMap): String ={
     //we need to reverse the order for printing, since we want the most common characters to be at the bottom
     val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromCodes(codes, inputSystem).reverse
@@ -24,6 +22,32 @@ object inputMethodService {
     return output
   }
 
+  def runConsoleProgram(singleInputSystem: inputSystemCombinedMap): Unit ={
+    var userInput = ""
+    while (!userInput.equals("quit")) {
+      userInput = scala.io.StdIn.readLine("writeInput ")
+      consoleProgramIteration(userInput, singleInputSystem)
+    }
+    println("user has ended the program")
+  }
+
+  private def consoleProgramIteration(userInput: String, singleInputSystem: inputSystemCombinedMap): Unit = {
+    val isCode: Boolean = inputIsCode(userInput)
+    if (isCode){
+      val resultString = printableCodeListResults(List(userInput), singleInputSystem)
+      println(resultString)
+    }else {
+      val resultString = printableHanziTextListResults(userInput, singleInputSystem)
+      println(resultString)
+    }
+  }
+
+  def inputIsCode(userInput: String): Boolean = {
+    val ordinary = (('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')).toSet
+    val result = userInput.forall(ordinary.contains(_))
+    return result
+  }
+
   private def printInfo(hanziInfoList: List[inputSystemHanziInfo]): String = {
     var output = ""
     for (eachInfo: inputSystemHanziInfo <- hanziInfoList) {
@@ -31,6 +55,14 @@ object inputMethodService {
       output += eachPrint + "\n"
     }
     return output
+  }
+
+  private def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
+    val infoList: List[inputSystemHanziInfo] = codes.map(i => getInfoListFromCode(i, inputSystem)).flatten
+    if (infoList.isEmpty) return List()
+    val removeDublicates = removeInfoWithSameCharacter(infoList)
+    val sorted = removeDublicates.sorted
+    return sorted
   }
 
   private def getSortedInfoListsFromHanzi(hanzi: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
@@ -44,13 +76,6 @@ object inputMethodService {
   private def getInfoListFromCode(code: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
     val lookup: Option[inputSystemHanziInfoList] = inputSystem.codeToInfo.content.get(code)
     if (lookup.isEmpty) return List() else return lookup.get.content
-  }
-
-  private def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
-    val infoList: List[inputSystemHanziInfo] = codes.map(i => getInfoListFromCode(i, inputSystem)).flatten
-    val removeDublicates = removeInfoWithSameCharacter(infoList)
-    val sorted = removeDublicates.sorted
-    return sorted
   }
 
   private def getStringFromHanziInfo(hanziInfo: inputSystemHanziInfo): String = {

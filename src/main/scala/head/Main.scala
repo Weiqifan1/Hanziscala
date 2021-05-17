@@ -1,13 +1,13 @@
 package head
 
 import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemTemp}
-import imputMethodGenerator.cedictHandling.{createCedictMap, getCedict, getCedictHanziToTranslationMap}
+import imputMethodGenerator.cedictHandling.{createCedictMap, getCedict}
 import imputMethodGenerator.inputMethodHandling
 import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createNestedInputSystemListTupple, createTextToMultipleCodes, frequencyInfoTraditionalFromString, generateInputSystemMap}
 import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
-import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile, serializeCedict, serializeJundaAndTzai}
+import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile, serializeCedict, serializeCedictAndFrequencyFiles, serializeJundaAndTzai}
 import serialization.InputSystemSerialization.{readInputSystemFromFileWithBinary, readInputSystemFromFileWithJava, serializeInputSystems}
-import services.inputMethodService.{getSortedInfoListsFromCodes, printableCodeListResults}
+import services.inputMethodService.{getSortedInfoListsFromCodes, printableCodeListResults, runConsoleProgram}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
@@ -17,12 +17,14 @@ object Main {
   def main(args: Array[String]): Unit = {
     println("hej lykke")
 
+    //serializeCedictAndFrequencyFiles()
     //serializeInputSystems()
     val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
 
-    val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
+    //val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
+    //println(printing)
 
-    println(printing)
+    runConsoleProgram(zhengma)
 
     println("farvel lykke ")
   }

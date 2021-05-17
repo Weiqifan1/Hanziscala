@@ -116,7 +116,6 @@ object inputMethodHandling {
     return returnObject
   }
 
-
   def createInputMethodObject(lineRegex: Regex,
                               splitLine: String,
                               splitCodeAndText: String,
@@ -124,7 +123,9 @@ object inputMethodHandling {
                               removeChars: String,
                               filepath: String): codeToTextList ={
     //val regex: Regex = """\"[a-z]+\"=\".+""".r//zhengma.lineMatchRegexList()
-    val hanzilines: List[String] = scala.io.Source.fromFile(filepath).mkString.split("\n").toList
+    //remove byteordermark if there are any:
+    val rawInputFromFile: String = scala.io.Source.fromFile(filepath).mkString
+    val hanzilines: List[String] = rawInputFromFile.split("\n").toList
     //scala.io.Source.fromFile("src/main/resources/hanzifilesRaw/zz201906_test.txt").mkString.split("\n").toList
     val charsToRemoveSet = removeChars.toSet//"\"<>".toSet
 
@@ -213,7 +214,7 @@ object inputMethodHandling {
     val backToString: List[String] = stream.map(i => Character.toChars(i).mkString)
     val traditional: List[String] = backToString.map(i => {
       val lookupResult: Option[String] = frequency.traditional.get(i)
-      if (lookupResult.nonEmpty){lookupResult.get}else{"0"}
+      if (lookupResult.nonEmpty){lookupResult.get.trim}else{"0"}
     })
     return traditional
   }
@@ -223,7 +224,7 @@ object inputMethodHandling {
     val backToString: List[String] = stream.map(i => Character.toChars(i).mkString)
     val simplified: List[String] = backToString.map(i => {
       val lookupResult: Option[String] = frequency.simplified.get(i)
-      if (lookupResult.nonEmpty){lookupResult.get}else{"0"}
+      if (lookupResult.nonEmpty){lookupResult.get.trim}else{"0"}
     })
     return simplified
   }
