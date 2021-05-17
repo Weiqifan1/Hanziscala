@@ -8,8 +8,23 @@ import scala.math.Ordering.Implicits.seqOrdering
 
 object inputMethodService {
 
+
+
   def printableCodeListResults(codes: List[String], inputSystem: inputSystemCombinedMap): String ={
-    val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromCodes(codes, inputSystem)
+    //we need to reverse the order for printing, since we want the most common characters to be at the bottom
+    val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromCodes(codes, inputSystem).reverse
+    var output = printInfo(hanziInfoList)
+    return output
+  }
+
+  def printableHanziTextListResults(hanzi: String, inputSystem: inputSystemCombinedMap): String ={
+    //we need to reverse the order for printing, since we want the most common characters to be at the bottom
+    val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromHanzi(hanzi, inputSystem).reverse
+    var output = printInfo(hanziInfoList)
+    return output
+  }
+
+  private def printInfo(hanziInfoList: List[inputSystemHanziInfo]): String = {
     var output = ""
     for (eachInfo: inputSystemHanziInfo <- hanziInfoList) {
       val eachPrint: String = getStringFromHanziInfo(eachInfo)
@@ -18,34 +33,27 @@ object inputMethodService {
     return output
   }
 
-  def printableTextResults(hanzi: String, inputSystem: inputSystemCombinedMap): String = {
-      val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromText(hanzi, inputSystem)
-      var output = ""
-      for (eachInfo <- hanziInfoList) {
-        val eachPrint = getStringFromHanziInfo(eachInfo)
-        output += eachPrint + "\n"
-      }
-      return output
-  }
-
-  def getSortedInfoListsFromText(hanzi: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
+  private def getSortedInfoListsFromHanzi(hanzi: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
     val lookup: Option[inputSystemHanziInfoList] = inputSystem.hanziToInfo.content.get(hanzi)
-    if (lookup.isEmpty){
-      return List()
-    }else {
-      val sorted = lookup.get.content.sorted
-      return sorted
-    }
+    if (lookup.isEmpty) return List() //else return lookup.get.content
+    val removeDublicates = removeInfoWithSameCharacter(lookup.get.content)
+    val sorted = removeDublicates.sorted
+    return sorted
   }
 
-  def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
+  private def getInfoListFromCode(code: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
+    val lookup: Option[inputSystemHanziInfoList] = inputSystem.codeToInfo.content.get(code)
+    if (lookup.isEmpty) return List() else return lookup.get.content
+  }
+
+  private def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
     val infoList: List[inputSystemHanziInfo] = codes.map(i => getInfoListFromCode(i, inputSystem)).flatten
     val removeDublicates = removeInfoWithSameCharacter(infoList)
     val sorted = removeDublicates.sorted
     return sorted
   }
 
-  def getStringFromHanziInfo(hanziInfo: inputSystemHanziInfo): String = {
+  private def getStringFromHanziInfo(hanziInfo: inputSystemHanziInfo): String = {
     var output = ""
     val primaryHanzi: String = hanziInfo.hanzi.toString
     val codes: String = getCodes(hanziInfo)
@@ -63,7 +71,7 @@ object inputMethodService {
   }
 
 
-  def getCodes(hanziInfo: inputSystemHanziInfo): String ={
+  private def getCodes(hanziInfo: inputSystemHanziInfo): String ={
     val codeList = hanziInfo.codes
     var outputString = ""
     for (eachCode <- codeList) {
@@ -73,18 +81,18 @@ object inputMethodService {
     return outputString
   }
 
-  def getCedictLines(hanziInfo: inputSystemHanziInfo): String ={
+  private def getCedictLines(hanziInfo: inputSystemHanziInfo): String ={
     val traditionalCedict: List[cedictObject] = if (!hanziInfo.cedictTrad.isEmpty) hanziInfo.cedictTrad.get else List()
     val simplifiedCedict: List[cedictObject] = if (!hanziInfo.cedictSimp.isEmpty) hanziInfo.cedictSimp.get else List()
 
-    var textOutput: String = "\n\t" + "Traditional:" + "\n"
+    var textOutput: String = "\n\t" + "Trad: "
     for (cedictElem <- traditionalCedict) {
       textOutput += "\t" + cedictElem.traditionalHanzi +
                         " " + cedictElem.simplifiedHanzi +
                         " " + cedictElem.pinyin +
                         " " + cedictElem.translation + "\n"
     }
-    textOutput += "\t" + "Simplified:" + "\n"
+    textOutput += "\t" + "Simp: "
     for (cedictElem <- simplifiedCedict) {
       textOutput += "\t" + cedictElem.traditionalHanzi +
         " " + cedictElem.simplifiedHanzi +
@@ -94,17 +102,12 @@ object inputMethodService {
     return textOutput.trim
   }
 
-  def loadData(): (inputSystemCombinedMap) = {
+  private def loadData(): (inputSystemCombinedMap) = {
     val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
     return (zhengma)
   }
 
-  def getInfoListFromCode(code: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
-    val lookup: Option[inputSystemHanziInfoList] = inputSystem.codeToInfo.content.get(code)
-    if (lookup.isEmpty) return List() else return lookup.get.content
-  }
-
-  def removeInfoWithSameCharacter(nestdeInfo: List[inputSystemHanziInfo]): List[inputSystemHanziInfo] = {
+  private def removeInfoWithSameCharacter(nestdeInfo: List[inputSystemHanziInfo]): List[inputSystemHanziInfo] = {
     var unique: ListBuffer[inputSystemHanziInfo] = ListBuffer()
     var listOfTexts: ListBuffer[String] = ListBuffer()
     for (info: inputSystemHanziInfo <- nestdeInfo) {

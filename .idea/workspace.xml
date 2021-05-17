@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="added jar.xml files. These should be in git ignore">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="can print to screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hanziFilesSerialized/zhengmaSerialized.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
@@ -102,6 +101,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="scalaRepl" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Hanziscala" />
       <option name="allowRunningInParallel" value="false" />
@@ -164,6 +174,8 @@
       <workItem from="1620406820850" duration="3879000" />
       <workItem from="1620458113761" duration="15294000" />
       <workItem from="1620548669309" duration="20538000" />
+      <workItem from="1621113952010" duration="74000" />
+      <workItem from="1621261611359" duration="2232000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -249,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621100896451</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="can print to screen">
+      <created>1621113664553</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1621113664553</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +299,8 @@
     <MESSAGE value="simpList virker nu. jeg skal refakturere" />
     <MESSAGE value="cedict map works" />
     <MESSAGE value="added jar.xml files. These should be in git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added jar.xml files. These should be in git ignore" />
+    <MESSAGE value="can print to screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="can print to screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,13 +370,38 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>28</line>
-          <option name="timeStamp" value="119" />
+          <line>22</line>
+          <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
           <line>24</line>
-          <option name="timeStamp" value="124" />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>14</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>15</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala</url>
+          <line>20</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>51</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>52</line>
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

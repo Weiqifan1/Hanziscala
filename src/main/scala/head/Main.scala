@@ -20,8 +20,6 @@ object Main {
     //serializeInputSystems()
     val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
 
-    val result = getSortedInfoListsFromCodes(List("zz", "ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
-
     val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
 
     println(printing)

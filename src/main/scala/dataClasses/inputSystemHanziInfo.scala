@@ -11,10 +11,10 @@ case class inputSystemHanziInfo(hanzi: String,
                                 traditionalFrequency: List[String],
                                 simplifiedFrequency: List[String]) extends Ordered [inputSystemHanziInfo] {
   def compare (that: inputSystemHanziInfo): Int = {
-    val currentTradList: List[Int] = this.traditionalFrequency.map{case "0" => 100000; case x => x.toInt}.sorted
-    val otherTradList: List[Int] = that.traditionalFrequency.map{case "0" => 100000; case x => x.toInt}.sorted
-    val currentSimpList: List[Int] = this.simplifiedFrequency.map{case "0" => 100000; case x => x.toInt}.sorted
-    val otherSimpList: List[Int] = that.simplifiedFrequency.map{case "0" => 100000; case x => x.toInt}.sorted
+    val currentTradList: List[Int] = this.traditionalFrequency.map{case "0" => 100000; case x => x.toInt}.sorted.reverse
+    val otherTradList: List[Int] = that.traditionalFrequency.map{case "0" => 100000; case x => x.toInt}.sorted.reverse
+    val currentSimpList: List[Int] = this.simplifiedFrequency.map{case "0" => 100000; case x => x.toInt}.sorted.reverse
+    val otherSimpList: List[Int] = that.simplifiedFrequency.map{case "0" => 100000; case x => x.toInt}.sorted.reverse
     val currentUnicode: List[Int] = this.hanzi.codePoints.toArray.toList.sorted
     val otherUnicode: List[Int] = that.hanzi.codePoints.toArray.toList.sorted
 
