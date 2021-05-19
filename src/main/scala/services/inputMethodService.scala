@@ -1,6 +1,7 @@
 package services
 
 import dataClasses.{cedictObject, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
+import head.Main.generateCodeListFromInput
 import serialization.InputSystemSerialization.readInputSystemFromFileWithJava
 
 import scala.collection.mutable.ListBuffer
@@ -31,10 +32,14 @@ object inputMethodService {
     println("user has ended the program")
   }
 
+  //TODO: til nedenst[ende metode skal der tilf'jes en metode til at generere en liste af koder
+
   private def consoleProgramIteration(userInput: String, singleInputSystem: inputSystemCombinedMap): Unit = {
+
     val isCode: Boolean = inputIsCode(userInput)
     if (isCode){
-      val resultString = printableCodeListResults(List(userInput), singleInputSystem)
+      val codeList: List[String] = generateCodeListFromInput(userInput)
+      val resultString = printableCodeListResults(codeList, singleInputSystem)
       println(resultString)
     }else {
       val resultString = printableHanziTextListResults(userInput, singleInputSystem)
@@ -43,7 +48,8 @@ object inputMethodService {
   }
 
   def inputIsCode(userInput: String): Boolean = {
-    val ordinary = (('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')).toSet
+    var ordinary: Set[Char] = (('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')).toSet
+    ordinary += '*'
     val result = userInput.forall(ordinary.contains(_))
     return result
   }
