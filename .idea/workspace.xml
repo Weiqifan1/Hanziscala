@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="en simpel version af konsol programmet virker nu. Mangler: skal kunne klare flere end 1 *placeholder og skal sortere anderledes saa baa traditionelle og simplificerede kan ses hurtigt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,17 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="scalaRepl" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Hanziscala" />
       <option name="allowRunningInParallel" value="false" />
@@ -176,6 +163,8 @@
       <workItem from="1620548669309" duration="20538000" />
       <workItem from="1621113952010" duration="74000" />
       <workItem from="1621261611359" duration="12830000" />
+      <workItem from="1621436012978" duration="9810000" />
+      <workItem from="1621625162609" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -282,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621276581568</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="alt ser ud til at virke. jeg kan nu slaa tegn og koder op. Jeg skal nu udvidde koden til at kunne haandtere en form for regex">
+      <created>1621282891756</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1621282891756</updated>
+    </task>
+    <task id="LOCAL-00017" summary="en simpel version af konsol programmet virker nu. Mangler: skal kunne klare flere end 1 *placeholder og skal sortere anderledes saa baa traditionelle og simplificerede kan ses hurtigt">
+      <created>1621440919635</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1621440919635</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +319,9 @@
     <MESSAGE value="can print to screen" />
     <MESSAGE value="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi" />
     <MESSAGE value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
+    <MESSAGE value="alt ser ud til at virke. jeg kan nu slaa tegn og koder op. Jeg skal nu udvidde koden til at kunne haandtere en form for regex" />
+    <MESSAGE value="en simpel version af konsol programmet virker nu. Mangler: skal kunne klare flere end 1 *placeholder og skal sortere anderledes saa baa traditionelle og simplificerede kan ses hurtigt" />
+    <option name="LAST_COMMIT_MESSAGE" value="en simpel version af konsol programmet virker nu. Mangler: skal kunne klare flere end 1 *placeholder og skal sortere anderledes saa baa traditionelle og simplificerede kan ses hurtigt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -373,22 +378,22 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>23</line>
+          <line>40</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>24</line>
+          <line>41</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -398,22 +403,22 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>52</line>
+          <line>59</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>56</line>
+          <line>63</line>
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>63</line>
+          <line>70</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>64</line>
+          <line>71</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -437,10 +442,25 @@
           <line>119</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
           <line>167</line>
           <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>41</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>30</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
+          <line>39</line>
+          <option name="timeStamp" value="159" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

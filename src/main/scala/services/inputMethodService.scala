@@ -27,7 +27,8 @@ object inputMethodService {
     var userInput = ""
     while (!userInput.equals("quit")) {
       userInput = scala.io.StdIn.readLine("writeInput ")
-      consoleProgramIteration(userInput, singleInputSystem)
+      val smallLetters: String = userInput.toLowerCase()
+      consoleProgramIteration(smallLetters, singleInputSystem)
     }
     println("user has ended the program")
   }
