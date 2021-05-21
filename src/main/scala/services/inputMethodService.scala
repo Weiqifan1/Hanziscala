@@ -1,7 +1,6 @@
 package services
 
 import dataClasses.{cedictObject, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
-import head.Main.generateCodeListFromInput
 import serialization.InputSystemSerialization.readInputSystemFromFileWithJava
 
 import scala.collection.mutable.ListBuffer
@@ -45,6 +44,20 @@ object inputMethodService {
     }else {
       val resultString = printableHanziTextListResults(userInput, singleInputSystem)
       println(resultString)
+    }
+  }
+
+  private def generateCodeListFromInput(inputCode: String): List[String] = {
+    val numberOfPlaceholders = inputCode.filter(_ == '*').length
+    val placeholderLetter: List[String] = ('a' to 'z').map(i => i.toString).toList
+    if (numberOfPlaceholders.equals(1)){
+      //val codeAsCharList: List[String] = inputCode.split("").toList
+      val manyLists = placeholderLetter.map(i => inputCode.replace('*',i.toCharArray()(0)))
+      return manyLists
+    }else if(numberOfPlaceholders.equals(0)){
+      return List(inputCode)
+    }else {
+      return List()
     }
   }
 

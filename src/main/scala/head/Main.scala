@@ -14,23 +14,6 @@ import scala.collection.mutable.ListBuffer
 
 object Main {
 
-
-
-  def generateCodeListFromInput(inputCode: String): List[String] = {
-    val numberOfPlaceholders = inputCode.filter(_ == '*').length
-    val placeholderLetter: List[String] = ('a' to 'z').map(i => i.toString).toList
-    if (numberOfPlaceholders.equals(1)){
-      //val codeAsCharList: List[String] = inputCode.split("").toList
-      val manyLists = placeholderLetter.map(i => inputCode.replace('*',i.toCharArray()(0)))
-      return manyLists
-    }else if(numberOfPlaceholders.equals(0)){
-      return List(inputCode)
-    }else {
-      return List()
-    }
-  }
-
-
   def main(args: Array[String]): Unit = {
     println("hej lykke")
 
