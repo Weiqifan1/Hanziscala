@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="always cast to small letters">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="refactor methods to inputMethodService">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,16 +139,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="Hanziscala" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="head.unit.MainSpec" />
+      <option name="testName" value="com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="Hanziscala" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="head.unit.MainSpec" />
+      <option name="testName" value="com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Scala REPL.scalaRepl" />
       <item itemvalue="ScalaTest.MainSpec" />
+      <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
+      <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
         <item itemvalue="Scala REPL.scalaRepl" />
         <item itemvalue="ScalaTest.MainSpec" />
+        <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +210,7 @@
       <workItem from="1621261611359" duration="12830000" />
       <workItem from="1621436012978" duration="9810000" />
       <workItem from="1621625162609" duration="30000" />
-      <workItem from="1621625205977" duration="434000" />
+      <workItem from="1621625205977" duration="3503000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -304,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621625323398</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor methods to inputMethodService">
+      <created>1621625772085</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1621625772085</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +382,8 @@
     <MESSAGE value="alt ser ud til at virke. jeg kan nu slaa tegn og koder op. Jeg skal nu udvidde koden til at kunne haandtere en form for regex" />
     <MESSAGE value="en simpel version af konsol programmet virker nu. Mangler: skal kunne klare flere end 1 *placeholder og skal sortere anderledes saa baa traditionelle og simplificerede kan ses hurtigt" />
     <MESSAGE value="always cast to small letters" />
-    <option name="LAST_COMMIT_MESSAGE" value="always cast to small letters" />
+    <MESSAGE value="refactor methods to inputMethodService" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor methods to inputMethodService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -408,12 +450,12 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>13</line>
+          <line>12</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>14</line>
+          <line>13</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -423,22 +465,22 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>73</line>
+          <line>87</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>77</line>
+          <line>91</line>
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>84</line>
+          <line>98</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>85</line>
+          <line>99</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -469,18 +511,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>41</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>30</line>
+          <line>29</line>
           <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>39</line>
-          <option name="timeStamp" value="159" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

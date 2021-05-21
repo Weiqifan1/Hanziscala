@@ -47,17 +47,18 @@ object inputMethodService {
     }
   }
 
-  private def generateCodeListFromInput(inputCode: String): List[String] = {
+  def generateCodeListFromInput(inputCode: String): List[String] = {
     val numberOfPlaceholders = inputCode.filter(_ == '*').length
     val placeholderLetter: List[String] = ('a' to 'z').map(i => i.toString).toList
-    if (numberOfPlaceholders.equals(1)){
-      //val codeAsCharList: List[String] = inputCode.split("").toList
-      val manyLists = placeholderLetter.map(i => inputCode.replace('*',i.toCharArray()(0)))
-      return manyLists
-    }else if(numberOfPlaceholders.equals(0)){
+    if (numberOfPlaceholders == 0) {
       return List(inputCode)
-    }else {
-      return List()
+    } else {
+      val indexoffirstPlaceholder = inputCode.indexOf('*')
+      val splitPlaceholder = inputCode.splitAt(indexoffirstPlaceholder)
+      val listEdition =  List(splitPlaceholder._1, splitPlaceholder._2.substring(1))
+      val listOfNewVariations: List[String] = placeholderLetter.map(i => listEdition(0) + i + listEdition(1))
+      val result = listOfNewVariations.map(i => generateCodeListFromInput(i)).flatten
+      return result
     }
   }
 
