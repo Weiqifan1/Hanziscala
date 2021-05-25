@@ -1,9 +1,14 @@
 package head
 
-import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemTemp}
+import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList, inputSystemTemp}
 import serialization.InputSystemSerialization.{readInputSystemFromFileWithBinary, readInputSystemFromFileWithJava, serializeInputSystems}
 import services.inputMethodService.{generateCodeListFromInput, getSortedInfoListsFromCodes, printableCodeListResults, runConsoleProgram}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
+
+//json
+import scala.collection.mutable._
+import net.liftweb.json._
+import net.liftweb.json.Serialization.write
 
 import scala.collection.mutable.ListBuffer
 import com.twitter.finagle.{Http, Service}
@@ -27,14 +32,19 @@ object Main {
     //************* run api data:
     //val result = apiMethod("sd", zhengma)
 
+
     println("farvel lykke ")
   }
 
-  def apiMethod(input: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
+  def apiMethod(input: String, inputSystem: inputSystemCombinedMap): String ={
     val smallLetters: String = input.toLowerCase()
     val codeList: List[String] = generateCodeListFromInput(smallLetters)
     val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromCodes(codeList, inputSystem)
-    return hanziInfoList
+    val outpuObject: inputSystemHanziInfoList = inputSystemHanziInfoList(hanziInfoList)
+    // create a JSON string from the Person, then print it
+    implicit val formats = DefaultFormats
+    val jsonString = write(outpuObject)
+    return jsonString
   }
 
 
@@ -48,7 +58,7 @@ object Main {
   //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
 
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {
-    val systemCharacterStrings: Set[String] = input.content.map(i => i.hanzi).toSet
+    val systemCharacterStrings: Predef.Set[String] = input.content.map(i => i.hanzi).toSet
     val jundacharacters = listOf5000Simplified()//scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testJunda.txt").mkString.split("")
     val tzaicharacters = listOf5000Traditional()
 

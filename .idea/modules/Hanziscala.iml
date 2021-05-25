@@ -65,13 +65,18 @@
     <orderEntry type="library" name="sbt: io.netty:netty-transport-native-epoll:4.1.59.Final:linux-x86_64:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-transport-native-unix-common:4.1.59.Final:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-transport:4.1.59.Final:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.java.dev.jna:jna:5.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.liftweb:lift-json_2.13:3.4.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.checkerframework:checker-qual:3.4.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.hdrhistogram:HdrHistogram:2.1.11:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.jline:jline:3.19.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-collection-compat_2.13:2.1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.13:1.1.2:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-xml_2.13:1.3.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_2.13:1.3.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-compiler:2.13.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.13.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scalap:2.13.5:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.13:3.2.7:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-compatible:3.2.7:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-core_2.13:3.2.7:jar" level="project" />
