@@ -78,7 +78,7 @@ object inputMethodService {
     return output
   }
 
-  private def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
+  def getSortedInfoListsFromCodes(codes: List[String], inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] = {
     val infoList: List[inputSystemHanziInfo] = codes.map(i => getInfoListFromCode(i, inputSystem)).flatten
     if (infoList.isEmpty) return List()
     val removeDublicates = removeInfoWithSameCharacter(infoList)

@@ -1,16 +1,14 @@
 package head
 
-import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemTemp}
-import imputMethodGenerator.cedictHandling.{createCedictMap, getCedict}
-import imputMethodGenerator.inputMethodHandling
-import imputMethodGenerator.inputMethodHandling.{createCodeToMultipleTexts, createTextToMultipleCodes, frequencyInfoTraditionalFromString}
-import imputMethodGenerator.jundaAndTzaiHandling.{getJundaAndTzaiMaps, getJundaCharToNumMap, getTzaiCharToNumMap}
-import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile, serializeCedict, serializeCedictAndFrequencyFiles, serializeJundaAndTzai}
+import dataClasses.{cedictMaps, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemTemp}
 import serialization.InputSystemSerialization.{readInputSystemFromFileWithBinary, readInputSystemFromFileWithJava, serializeInputSystems}
-import services.inputMethodService.{getSortedInfoListsFromCodes, printableCodeListResults, runConsoleProgram}
+import services.inputMethodService.{generateCodeListFromInput, getSortedInfoListsFromCodes, printableCodeListResults, runConsoleProgram}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
 import scala.collection.mutable.ListBuffer
+import com.twitter.finagle.{Http, Service}
+import com.twitter.finagle.http
+import com.twitter.util.{Await, Future}
 
 object Main {
 
@@ -20,15 +18,31 @@ object Main {
     //serializeCedictAndFrequencyFiles()
     //serializeInputSystems()
     val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
-
     //val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
     //println(printing)
 
+    //*********** run console program
     runConsoleProgram(zhengma)
+
+    //************* run api data:
+    //val result = apiMethod("sd", zhengma)
 
     println("farvel lykke ")
   }
 
+  def apiMethod(input: String, inputSystem: inputSystemCombinedMap): List[inputSystemHanziInfo] ={
+    val smallLetters: String = input.toLowerCase()
+    val codeList: List[String] = generateCodeListFromInput(smallLetters)
+    val hanziInfoList: List[inputSystemHanziInfo] = getSortedInfoListsFromCodes(codeList, inputSystem)
+    return hanziInfoList
+  }
+
+
+  //*********************** serialize data to json
+  //tasks>
+  //1: get a function
+
+  //***********************
 
 
   //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
