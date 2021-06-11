@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="ready to serialize data to json">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__net_java_dev_jna_jna_5_3_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__net_liftweb_lift_json_2_13_3_4_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jline_jline_3_19_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_compiler_2_13_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scalap_2_13_5_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="data serialized to json. ready to implement api">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/Server.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,15 +108,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Hanziscala" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,35 +159,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="Hanziscala" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="head.unit.MainSpec" />
-      <option name="testName" value="com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Scala REPL.scalaRepl" />
       <item itemvalue="ScalaTest.MainSpec" />
       <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
-      <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
         <item itemvalue="Scala REPL.scalaRepl" />
         <item itemvalue="ScalaTest.MainSpec" />
-        <item itemvalue="ScalaTest.MainSpec.com.cmlykke.scala.services.inputMethodService should compute a list of numbers&#10;com.cmlykke.scala.services.inputMethodService should compute a list of numbers" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +201,8 @@
       <workItem from="1621436012978" duration="9810000" />
       <workItem from="1621625162609" duration="30000" />
       <workItem from="1621625205977" duration="3503000" />
+      <workItem from="1622227596297" duration="4916000" />
+      <workItem from="1623433410449" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>

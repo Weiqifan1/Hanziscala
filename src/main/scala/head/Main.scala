@@ -47,16 +47,6 @@ object Main {
     return jsonString
   }
 
-
-  //*********************** serialize data to json
-  //tasks>
-  //1: get a function
-
-  //***********************
-
-
-  //return a single tupple with the simplifiedTop5000 and traditionalTop5000 missing character count
-
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {
     val systemCharacterStrings: Predef.Set[String] = input.content.map(i => i.hanzi).toSet
     val jundacharacters = listOf5000Simplified()//scala.io.Source.fromFile("src/main/resources/frequencyfilesRaw/testJunda.txt").mkString.split("")
