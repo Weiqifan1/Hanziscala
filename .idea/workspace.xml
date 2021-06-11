@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="removed attempth at creating a server">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/Boundary.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="bad imports removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/cedictMaps.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/cedictObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictTempTuple.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/cedictTempTuple.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/codeToMultipleTextsList.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/codeToMultipleTextsObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/codeToTextList.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/codeToTextObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/frequencyMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/frequencyMaps.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCodeToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemCodeToInfoMap.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCombinedMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemCombinedMap.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemHanziInfo.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfoList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemHanziInfoList.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemHanziToInfoMap.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemTemp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/inputSystemTemp.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/textToMultipleCodesList.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/dataClasses/textToMultipleCodesObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/FrequencyFileSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/serialization/FrequencyFileSerialization.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/serialization/InputSystemSerialization.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/services/inputMethodService.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/testPreparation/hashmapTestPrepare.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/testPreparation/hashmapTestPrepare.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inpuSystemLookup/Boundary.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -390,7 +366,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623436166411</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactored such that input system lookout is in a separate directory">
+      <created>1623436869901</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1623436869901</updated>
+    </task>
+    <task id="LOCAL-00023" summary="bad imports removed">
+      <created>1623436987284</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1623436987284</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +420,9 @@
     <MESSAGE value="refactor methods to inputMethodService" />
     <MESSAGE value="ready to serialize data to json" />
     <MESSAGE value="removed attempth at creating a server" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed attempth at creating a server" />
+    <MESSAGE value="refactored such that input system lookout is in a separate directory" />
+    <MESSAGE value="bad imports removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bad imports removed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

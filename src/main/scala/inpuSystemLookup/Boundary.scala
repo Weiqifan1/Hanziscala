@@ -3,7 +3,8 @@ package inpuSystemLookup
 import dataClasses.{codeToTextList, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
 import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Serialization.write
-import serialization.InputSystemSerialization.readInputSystemFromFileWithJava
+import serialization.FrequencyFileSerialization.serializeCedictAndFrequencyFiles
+import serialization.InputSystemSerialization.{readInputSystemFromFileWithJava, serializeInputSystems}
 import services.inputMethodService.{generateCodeListFromInput, getSortedInfoListsFromCodes, runConsoleProgram}
 import testPreparation.hashmapTestPrepare.{listOf5000Simplified, listOf5000Traditional}
 
@@ -16,11 +17,13 @@ object Boundary {
 
     //serializeCedictAndFrequencyFiles()
     //serializeInputSystems()
-    val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
+
     //val printing: String = printableCodeListResults(List("zz","ab", "aa", "aavv", "psli", "klg", "boji"), zhengma)
     //println(printing)
 
     //*********** run console program
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    val zhengma = readInputSystemFromFileWithJava("zhengmaSerialized.txt")
     runConsoleProgram(zhengma)
 
     //************* run api data:
