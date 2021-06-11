@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="data serialized to json. ready to implement api">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Server.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/cedictMaps.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/cedictObject.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/cedictTempTuple.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/cedictTempTuple.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/codeToMultipleTextsList.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToMultipleTextsObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/codeToMultipleTextsObject.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/codeToTextList.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/codeToTextObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/codeToTextObject.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/frequencyMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/frequencyMaps.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCodeToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemCodeToInfoMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemCombinedMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemCombinedMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfoList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfoList.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziToInfoMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziToInfoMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemTemp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemTemp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/textToMultipleCodesList.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/dataClasses/textToMultipleCodesObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/textToMultipleCodesObject.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/imputMethodGenerator/jundaAndTzaiHandling.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/jundaAndTzaiHandling.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/FrequencyFileSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/serialization/FrequencyFileSerialization.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +131,17 @@
     <configuration name="Server" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Hanziscala" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -389,63 +420,63 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
           <line>83</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>147</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>170</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>146</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>168</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>31</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>59</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/cedictHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
           <line>58</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/serialization/InputSystemSerialization.scala</url>
           <line>42</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/serialization/InputSystemSerialization.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/serialization/InputSystemSerialization.scala</url>
           <line>44</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>26</line>
+          <line>27</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
@@ -459,7 +490,7 @@
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
           <line>20</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
@@ -484,7 +515,7 @@
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
           <line>15</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
@@ -492,7 +523,7 @@
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/dataClasses/inputSystemHanziInfo.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
           <line>16</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
@@ -500,12 +531,12 @@
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
           <line>119</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/imputMethodGenerator/inputMethodHandling.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
           <line>167</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
