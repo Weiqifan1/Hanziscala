@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-11: input system lookup work in new directory, including generating new serialized files">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/loadFrequencyFiles.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-11, 21.22: started working on flashcard file generator">
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,17 +115,6 @@
     <configuration name="Server" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Hanziscala" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -390,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623437589536</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="2021-06-11, 21.22: started working on flashcard file generator">
+      <created>1623439415374</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1623439415374</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +402,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="renamed directory of main method" />
     <MESSAGE value="zhengma test seems to work. Must create a hashmap and look into serialization" />
     <MESSAGE value="created a method for testing the input systems. Must be moved to the test class" />
     <MESSAGE value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
@@ -433,7 +425,9 @@
     <MESSAGE value="refactored such that input system lookout is in a separate directory" />
     <MESSAGE value="bad imports removed" />
     <MESSAGE value="2021-06-11: input system lookup work in new directory, including generating new serialized files" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-06-11: input system lookup work in new directory, including generating new serialized files" />
+    <MESSAGE value="2021-06-11, 21.22: started working on Anki file generator" />
+    <MESSAGE value="2021-06-11, 21.22: started working on flashcard file generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-06-11, 21.22: started working on flashcard file generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

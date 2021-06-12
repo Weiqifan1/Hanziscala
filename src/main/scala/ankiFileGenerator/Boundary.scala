@@ -14,8 +14,8 @@ object Boundary {
     println(cedictTrad)
 
     val frequency = readJundaAndTzaiMapsFromFile()
-    val traditionalFrequency: List[String] = frequencyInfoTraditionalFromString("我", frequency)
-    val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString("我", frequency)
+    val traditionalFrequency: List[String] = frequencyInfoTraditionalFromString("癮", frequency)
+    val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString("癮", frequency)
     println(traditionalFrequency)
     println(simplifiedFrequency)
 
