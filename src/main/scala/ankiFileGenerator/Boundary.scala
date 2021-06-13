@@ -1,6 +1,7 @@
 package ankiFileGenerator
 
 import ankiFileGenerator.frequencyFileHandling.loadFrequencyFiles.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
+import ankiFileGenerator.frequencyFileHandling.prepareTextHandlingMethods.getListOfWordsFromText
 import dataClasses.cedictObject
 import imputMethodGenerator.inputMethodHandling.{frequencyInfoSimplifiedFromString, frequencyInfoTraditionalFromString}
 
@@ -10,7 +11,7 @@ object Boundary {
     println("hej lykke")
 
     val cedictMap = readCedictMapsFromFile()
-    val cedictTrad: Option[List[cedictObject]] = cedictMap.traditionalMap.get("我")
+    /*val cedictTrad: Option[List[cedictObject]] = cedictMap.traditionalMap.get("我")
     println(cedictTrad)
 
     val frequency = readJundaAndTzaiMapsFromFile()
@@ -18,6 +19,9 @@ object Boundary {
     val simplifiedFrequency: List[String] = frequencyInfoSimplifiedFromString("癮", frequency)
     println(traditionalFrequency)
     println(simplifiedFrequency)
+*/
+
+   val wordList = getListOfWordsFromText("如果123我說  衝,不停的麻煩大了",true, cedictMap)
 
 
     println("end")

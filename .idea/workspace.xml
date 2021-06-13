@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-12, 21.02: add a few testcalls to verify that deserialization works">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/dataClasses/cedictFreqObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-12, 23.59: started on info methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/dataClasses/cedictFreqObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/flashcardDataClasses/cedictFreqObject.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +50,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -121,15 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,7 +226,8 @@
       <workItem from="1621625205977" duration="3503000" />
       <workItem from="1622227596297" duration="4916000" />
       <workItem from="1623433410449" duration="32000" />
-      <workItem from="1623524496749" duration="11492000" />
+      <workItem from="1623524496749" duration="11821000" />
+      <workItem from="1623571773586" duration="9124000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -406,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623524621897</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="2021-06-12, 23.59: started on info methods">
+      <created>1623536829267</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1623536829267</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +437,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created a method for testing the input systems. Must be moved to the test class" />
     <MESSAGE value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
     <MESSAGE value="finished junda and tzai hashmaps" />
     <MESSAGE value="my cedcit map doesnt work yest. the dublet lines doesnt get added" />
@@ -450,136 +461,69 @@
     <MESSAGE value="2021-06-11, 21.22: started working on Anki file generator" />
     <MESSAGE value="2021-06-11, 21.22: started working on flashcard file generator" />
     <MESSAGE value="2021-06-12, 21.02: add a few testcalls to verify that deserialization works" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-06-12, 21.02: add a few testcalls to verify that deserialization works" />
+    <MESSAGE value="2021-06-12, 23.59: started on info methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-06-12, 23.59: started on info methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>83</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>54</line>
+          <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>147</line>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>55</line>
+          <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>170</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>51</line>
+          <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>146</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>36</line>
+          <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>168</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>37</line>
+          <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>31</line>
-          <option name="timeStamp" value="57" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>32</line>
+          <option name="timeStamp" value="195" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>59</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/cedictHandling.scala</url>
-          <line>58</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/serialization/InputSystemSerialization.scala</url>
-          <line>42</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/serialization/InputSystemSerialization.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
           <line>44</line>
-          <option name="timeStamp" value="110" />
+          <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>24</line>
-          <option name="timeStamp" value="125" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>48</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/head/Main.scala</url>
-          <line>25</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>12</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>13</line>
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
-          <line>20</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>87</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>91</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>98</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>99</line>
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
-          <line>15</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/inputSystemHanziInfo.scala</url>
-          <line>16</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>119</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/inputSystemLookup/dataClasses/imputMethodGenerator/inputMethodHandling.scala</url>
-          <line>167</line>
-          <option name="timeStamp" value="153" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala</url>
+          <line>26</line>
+          <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/services/inputMethodService.scala</url>
-          <line>29</line>
-          <option name="timeStamp" value="158" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>26</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
+          <line>27</line>
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

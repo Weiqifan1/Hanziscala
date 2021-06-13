@@ -1,4 +1,4 @@
-package ankiFileGenerator.dataClasses
+package ankiFileGenerator.flashcardDataClasses
 
 case class cedictFreqObject(traditionalHanzi: String,
                             simplifiedHanzi: String,
