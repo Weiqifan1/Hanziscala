@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-12, 23.59: started on info methods">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/generateTSVfile.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/dataClasses/cedictFreqObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/flashcardDataClasses/cedictFreqObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +226,7 @@
       <workItem from="1622227596297" duration="4916000" />
       <workItem from="1623433410449" duration="32000" />
       <workItem from="1623524496749" duration="11821000" />
-      <workItem from="1623571773586" duration="9124000" />
+      <workItem from="1623571773586" duration="11860000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -418,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623536829267</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests">
+      <created>1623581350727</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1623581350727</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,8 +443,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ready to handle junda and tzai. this is needed to add character hierachies to hashmap objects" />
-    <MESSAGE value="finished junda and tzai hashmaps" />
     <MESSAGE value="my cedcit map doesnt work yest. the dublet lines doesnt get added" />
     <MESSAGE value="my cedict map still doesnt work" />
     <MESSAGE value="in the cedict map 1 simplified dublet is missing and the sublist sometimes contains dublets" />
@@ -462,67 +466,69 @@
     <MESSAGE value="2021-06-11, 21.22: started working on flashcard file generator" />
     <MESSAGE value="2021-06-12, 21.02: add a few testcalls to verify that deserialization works" />
     <MESSAGE value="2021-06-12, 23.59: started on info methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-06-12, 23.59: started on info methods" />
+    <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words" />
+    <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>54</line>
+          <line>62</line>
           <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>55</line>
+          <line>63</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>51</line>
+          <line>59</line>
           <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>36</line>
+          <line>44</line>
           <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>37</line>
+          <line>45</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>32</line>
+          <line>40</line>
           <option name="timeStamp" value="195" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>44</line>
+          <line>52</line>
           <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>48</line>
+          <line>56</line>
           <option name="timeStamp" value="198" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="199" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>26</line>
+          <line>14</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="200" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
+        <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>27</line>
+          <line>15</line>
           <option name="timeStamp" value="201" />
         </line-breakpoint>
       </breakpoints>
