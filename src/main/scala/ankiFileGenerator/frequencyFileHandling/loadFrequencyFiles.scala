@@ -1,6 +1,6 @@
 package ankiFileGenerator.frequencyFileHandling
 
-import dataClasses.{cedictMaps, frequencyMaps}
+import inpuSystemLookup.dataClasses.{cedictMaps, frequencyMaps}
 
 import java.io.{File, FileInputStream, ObjectInputStream}
 

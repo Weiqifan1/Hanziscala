@@ -1,11 +1,9 @@
-package serialization
+package inpuSystemLookup.serialization
 
-import dataClasses.{cedictMaps, codeToTextList, frequencyMaps, inputSystemCodeToInfoMap, inputSystemCombinedMap, inputSystemHanziInfoList, inputSystemHanziToInfoMap, inputSystemTemp}
-import imputMethodGenerator.inputMethodHandling
-import imputMethodGenerator.inputMethodHandling.{createNestedSystemListHelper, generateInputSystemMapCode, generateInputSystemMapHanzi}
-import imputMethodGenerator.jundaAndTzaiHandling.getJundaAndTzaiMaps
-import serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
-import upickle.default._
+import inpuSystemLookup.dataClasses.{cedictMaps, codeToTextList, frequencyMaps, inputSystemCodeToInfoMap, inputSystemCombinedMap, inputSystemHanziToInfoMap, inputSystemTemp}
+import inpuSystemLookup.imputMethodGenerator.inputMethodHandling
+import inpuSystemLookup.imputMethodGenerator.inputMethodHandling.{createNestedSystemListHelper, generateInputSystemMapCode}
+import inpuSystemLookup.serialization.FrequencyFileSerialization.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
 
 import scala.io.Source
 import java.io.{File, FileInputStream, FileOutputStream, ObjectInputStream, ObjectOutputStream, PrintWriter}
@@ -34,7 +32,7 @@ object InputSystemSerialization {
     val zhengmaAdvanced: inputSystemTemp = new inputSystemTemp(codeFirst, hanziFirst)
 
     //val inputSystemMap = generateInputSystemMap(zhengmaAdvanced, deserializedCedict, frequencyMap)
-    val hanzi: inputSystemHanziToInfoMap = generateInputSystemMapHanzi(zhengmaAdvanced, deserializedCedict, frequencyMap)
+    val hanzi: inputSystemHanziToInfoMap = inputMethodHandling.generateInputSystemMapHanzi(zhengmaAdvanced, deserializedCedict, frequencyMap)
 
     //tempHanziSerialization
     val temphanzimap: Map[String, codeToTextList] = hanziFirst.map(i => i._1 -> i._2).toMap

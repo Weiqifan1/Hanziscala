@@ -1,8 +1,6 @@
 package inpuSystemLookup
 
 import dataClasses.{codeToTextList, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
-import net.liftweb.json.DefaultFormats
-import net.liftweb.json.Serialization.write
 import serialization.FrequencyFileSerialization.serializeCedictAndFrequencyFiles
 import serialization.InputSystemSerialization.{readInputSystemFromFileWithJava, serializeInputSystems}
 import services.inputMethodService.{generateCodeListFromInput, getSortedInfoListsFromCodes, runConsoleProgram}
@@ -32,7 +30,7 @@ object Boundary {
 
     println("farvel lykke ")
   }
-
+/*
   def apiMethod(input: String, inputSystem: inputSystemCombinedMap): String ={
     val smallLetters: String = input.toLowerCase()
     val codeList: List[String] = generateCodeListFromInput(smallLetters)
@@ -42,7 +40,7 @@ object Boundary {
     implicit val formats = DefaultFormats
     val jsonString = write(outpuObject)
     return jsonString
-  }
+  }*/
 
   def qualityCheckInput(input: codeToTextList): (Integer, Integer) = {
     val systemCharacterStrings: Predef.Set[String] = input.content.map(i => i.hanzi).toSet

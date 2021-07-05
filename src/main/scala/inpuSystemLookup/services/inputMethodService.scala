@@ -1,7 +1,7 @@
-package services
+package inpuSystemLookup.services
 
-import dataClasses.{cedictObject, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
-import serialization.InputSystemSerialization.readInputSystemFromFileWithJava
+import inpuSystemLookup.dataClasses.{cedictObject, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList}
+import inpuSystemLookup.serialization.InputSystemSerialization.readInputSystemFromFileWithJava
 
 import scala.collection.mutable.ListBuffer
 import scala.math.Ordering.Implicits.seqOrdering

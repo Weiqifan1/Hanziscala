@@ -1,6 +1,6 @@
-package imputMethodGenerator
+package inpuSystemLookup.imputMethodGenerator
 
-import dataClasses.{cedictMaps, cedictObject, cedictTempTuple}
+import inpuSystemLookup.dataClasses.{cedictMaps, cedictObject, cedictTempTuple}
 
 import java.io.{FileInputStream, FileOutputStream, ObjectInputStream, ObjectOutputStream}
 import scala.collection.mutable

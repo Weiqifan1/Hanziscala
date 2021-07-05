@@ -1,4 +1,4 @@
-package testPreparation
+package inpuSystemLookup.testPreparation
 
 object hashmapTestPrepare {
 

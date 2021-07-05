@@ -1,7 +1,6 @@
-package imputMethodGenerator
+package inpuSystemLookup.imputMethodGenerator
 
-import dataClasses.{cedictMaps, cedictObject, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCodeToInfoMap, inputSystemCombinedMap, inputSystemHanziInfo, inputSystemHanziInfoList, inputSystemHanziToInfoMap, inputSystemTemp, textToMultipleCodesList, textToMultipleCodesObject}
-import org.graalvm.compiler.graph.Node.Input
+import inpuSystemLookup.dataClasses.{cedictMaps, cedictObject, codeToMultipleTextsList, codeToMultipleTextsObject, codeToTextList, codeToTextObject, frequencyMaps, inputSystemCodeToInfoMap, inputSystemHanziInfo, inputSystemHanziInfoList, inputSystemHanziToInfoMap, inputSystemTemp, textToMultipleCodesList, textToMultipleCodesObject}
 
 import java.util.stream.IntStream
 import scala.collection.mutable.ListBuffer

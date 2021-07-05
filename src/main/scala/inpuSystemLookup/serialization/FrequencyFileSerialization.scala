@@ -1,8 +1,8 @@
-package serialization
+package inpuSystemLookup.serialization
 
-import dataClasses.{cedictMaps, frequencyMaps}
-import imputMethodGenerator.cedictHandling.getCedict
-import imputMethodGenerator.jundaAndTzaiHandling.getJundaAndTzaiMaps
+import inpuSystemLookup.dataClasses.{cedictMaps, frequencyMaps}
+import inpuSystemLookup.imputMethodGenerator.cedictHandling.getCedict
+import inpuSystemLookup.imputMethodGenerator.jundaAndTzaiHandling.getJundaAndTzaiMaps
 
 import java.io.{File, FileInputStream, FileOutputStream, ObjectInputStream, ObjectOutputStream}
 

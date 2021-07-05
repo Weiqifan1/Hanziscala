@@ -1,6 +1,7 @@
-package imputMethodGenerator
+package inpuSystemLookup.imputMethodGenerator
 
-import dataClasses.frequencyMaps
+import inpuSystemLookup.dataClasses.frequencyMaps
+
 import scala.collection.mutable.ListBuffer
 object jundaAndTzaiHandling {
 
