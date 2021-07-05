@@ -2,8 +2,9 @@ package ankiFileGenerator.generateAudioFiles
 
 //import scalaj.http.{Http, HttpOptions, HttpResponse}
 
-
-//https://soundoftext.com/docs
+//2021 07 05 kl. 22.33 -- proev med amazon polly
+//https://github.com/mslinn/awslib_scala
+//https://aws.amazon.com/polly/features/?nc=sn&loc=3
 object generateAudio {
 /*
   def getAudioFile(chineseText: String) = {
