@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-05-20.16: readyToTryToCreateAudio">
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-05-22.34: tryAmazon">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalaj_scalaj_http_2_13_2_4_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +219,7 @@
       <workItem from="1623433410449" duration="32000" />
       <workItem from="1623524496749" duration="11821000" />
       <workItem from="1623571773586" duration="11860000" />
+      <workItem from="1625593692705" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -412,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623581350727</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="2021-07-05-22.34: tryAmazon">
+      <created>1625517285308</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1625517285308</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +443,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="my cedcit map doesnt work yest. the dublet lines doesnt get added" />
     <MESSAGE value="my cedict map still doesnt work" />
     <MESSAGE value="in the cedict map 1 simplified dublet is missing and the sublist sometimes contains dublets" />
     <MESSAGE value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
@@ -456,7 +467,8 @@
     <MESSAGE value="2021-06-12, 23.59: started on info methods" />
     <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words" />
     <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests" />
+    <MESSAGE value="2021-07-05-22.34: tryAmazon" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-07-05-22.34: tryAmazon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -503,7 +515,7 @@
         </line-breakpoint>
         <line-breakpoint type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint type="scala-line">
