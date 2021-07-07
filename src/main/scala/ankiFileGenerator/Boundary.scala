@@ -51,7 +51,7 @@ object Boundary {
 
         //writeTSVfileTEST(finalStory, "testTSV_File")
 
-        //getAudioFile("真是太遜了")
+        getAudioFile("真是太遜了")//hello world  //真是太遜了
 
         val maResult = cedictMap.traditionalMap.get("嗎")
         println(maResult.get(0).translation)
