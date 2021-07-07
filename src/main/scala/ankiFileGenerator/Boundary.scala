@@ -5,7 +5,7 @@ import ankiFileGenerator.frequencyFileHandling.generateStoryObject.{createStoryO
 import ankiFileGenerator.generateTSVsforAnki.generateTSVfile.writeTSVfile
 import ankiFileGenerator.frequencyFileHandling.objectSorting
 import ankiFileGenerator.frequencyFileHandling.loadFrequencyFiles.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
-import ankiFileGenerator.generateAudioFiles.generateAudio.getAudioFile
+import ankiFileGenerator.generateAudioFiles.generateAudio.{getAudioFile, getAudioSecret}
 import ankiFileGenerator.generateTSVsforAnki.testTSV.writeTSVfileTEST
 
 import java.io.{File, FileInputStream}
@@ -51,7 +51,9 @@ object Boundary {
 
         //writeTSVfileTEST(finalStory, "testTSV_File")
 
-        getAudioFile("真是太遜了")//hello world  //真是太遜了
+        //getAudioFile("真是太遜了", "lykkeAAA")//hello world  //真是太遜了
+        val testSecretResult: String = getAudioSecret()
+
 
         val maResult = cedictMap.traditionalMap.get("嗎")
         println(maResult.get(0).translation)

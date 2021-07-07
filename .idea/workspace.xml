@@ -4,11 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-05-22.34: tryAmazon">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalaj_scalaj_http_2_13_2_4_2_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Hanziscala.iml" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-07-23.18: text to speech works!">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_code_gson_gson_2_8_6_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_guava_failureaccess_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_guava_guava_29_0_jre_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_j2objc_j2objc_annotations_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_cloud_sdk_core_9_5_4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_assistant_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_common_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_compare_comply_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_discovery_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_language_translator_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_natural_language_classifier_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_natural_language_understanding_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_personality_insights_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_speech_to_text_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_text_to_speech_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_tone_analyzer_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_visual_recognition_9_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okhttp3_logging_interceptor_4_9_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okhttp3_okhttp_4_9_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okhttp3_okhttp_urlconnection_4_9_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okio_okio_2_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__commons_codec_commons_codec_1_13_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__commons_io_commons_io_2_6_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__io_reactivex_rxjava2_rxjava_2_2_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_commons_commons_lang3_3_8_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jetbrains_kotlin_kotlin_stdlib_1_4_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_4_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivestreams_reactive_streams_1_0_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_ibm_watson_ibm_watson_9_2_0_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala" afterDir="false" />
     </list>
@@ -98,11 +130,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/scala/ankiFileGenerator" />
       <recent name="$PROJECT_DIR$/src/main/inpuSystemLookup" />
       <recent name="$PROJECT_DIR$/src/main/resources/frequencyfiles" />
       <recent name="$PROJECT_DIR$/src/main/resources/hanzifiles" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/scala" />
@@ -125,6 +157,17 @@
     <configuration name="Server" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Hanziscala" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,7 +262,8 @@
       <workItem from="1623433410449" duration="32000" />
       <workItem from="1623524496749" duration="11821000" />
       <workItem from="1623571773586" duration="11860000" />
-      <workItem from="1625593692705" duration="1440000" />
+      <workItem from="1625593692705" duration="2124000" />
+      <workItem from="1625664831884" duration="7481000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -424,7 +468,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625517285308</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="2021-07-06-21.55: ProevIbm_KlarTilAtSkriveNytEndpoint">
+      <created>1625601371450</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1625601371450</updated>
+    </task>
+    <task id="LOCAL-00031" summary="2021-07-07-23.18: text to speech works!">
+      <created>1625692806829</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1625692806829</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,8 +501,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="my cedict map still doesnt work" />
-    <MESSAGE value="in the cedict map 1 simplified dublet is missing and the sublist sometimes contains dublets" />
     <MESSAGE value="todo: find out why 1 simplified dublet is missing and check that the total number of unique cedict objects is still the same as the length of cedict" />
     <MESSAGE value="simpList virker nu. jeg skal refakturere" />
     <MESSAGE value="cedict map works" />
@@ -468,7 +524,9 @@
     <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words" />
     <MESSAGE value="2021-06-13, 12.48: canSplitTextIntoWords and getNaive info from words. no tests" />
     <MESSAGE value="2021-07-05-22.34: tryAmazon" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-07-05-22.34: tryAmazon" />
+    <MESSAGE value="2021-07-06-21.55: ProevIbm_KlarTilAtSkriveNytEndpoint" />
+    <MESSAGE value="2021-07-07-23.18: text to speech works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-07-07-23.18: text to speech works!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -530,6 +588,51 @@
           <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
           <line>15</line>
           <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>14</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>31</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>37</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>38</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>32</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala</url>
+          <line>54</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>47</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala</url>
+          <line>57</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateAudioFiles/generateAudio.scala</url>
+          <line>55</line>
+          <option name="timeStamp" value="211" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -12,8 +12,9 @@ import java.io.IOException
 object generateAudio {
 
 //4Dm9hNplQNmu2twG3pjh86nAqR9_-px5eifVqXyKI7w2
-  def getAudioFile(chineseText: String) = {
-    val authenticator = new IamAuthenticator("4Dm9hNplQNmu2twG3pjh86nAqR9_-px5eifVqXyKI7w2")
+  def getAudioFile(chineseText: String, filename: String) = {
+    val audioSecretText: String = getAudioSecret()
+    val authenticator = new IamAuthenticator(audioSecretText)
     val textToSpeech = new TextToSpeech(authenticator)
     textToSpeech.setServiceUrl("https://api.eu-gb.text-to-speech.watson.cloud.ibm.com")
 
@@ -24,7 +25,8 @@ object generateAudio {
         .voice("zh-CN_ZhangJingVoice").build //zh-CN_ZhangJingVoice //en-US_AllisonV3Voice
       val inputStream = textToSpeech.synthesize(synthesizeOptions).execute.getResult
       val in = WaveUtils.reWriteWaveHeader(inputStream)
-      val out = new FileOutputStream("hello_world.wav")
+      val filePathAndName: String = "outputAudio" + "/" + filename + ".wav"
+      val out = new FileOutputStream(filePathAndName)//"hello_world.wav")
       var buffer = new Array[Byte](1024)
 
       var length = in.read(buffer)
@@ -40,6 +42,18 @@ object generateAudio {
       case e: IOException =>
         e.printStackTrace()
     }
+  }
+
+  def getAudioSecret(): String = {
+    val filePath = "projectSecrets/audioSecrets.txt"
+    val hanzilines: List[String] = scala.io.Source.fromFile(filePath).mkString.split("\n").toList
+    if (hanzilines.length > 0 && hanzilines(0).length > 0){
+      //the audio secret exists and will be returned
+      return hanzilines(0)
+    } else {
+      return null
+    }
+    return "null"
   }
 
 
