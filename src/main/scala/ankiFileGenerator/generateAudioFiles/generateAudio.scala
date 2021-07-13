@@ -9,6 +9,9 @@ import java.io.IOException
 
 //prøv i stedet med IBM: https://cloud.ibm.com/docs?tab=tutorials&filters=lite-account&page=1&pageSize=20
 //"https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/v1/synthesize
+
+//proev istedet https://ankiweb.net/shared/info/301952613 til at generere audio
+
 object generateAudio {
 
 //4Dm9hNplQNmu2twG3pjh86nAqR9_-px5eifVqXyKI7w2

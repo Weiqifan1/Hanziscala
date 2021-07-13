@@ -10,6 +10,8 @@ object Main {
     //runInputSystemLookup()
     runAnkiFileGenerator()
 
+    //println("hej der")
+
     val chrtest: String = "helolo"
 
     //getAudioFile("這一件才像我的風格 我決定要了")
