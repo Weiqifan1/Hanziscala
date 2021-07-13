@@ -1,5 +1,7 @@
 package ankiFileGenerator.flashcardDataClasses
 
+import io.reactivex.Maybe
+
 case class cedictFreqObject(storyInfo1of2: String,
                             storyInfo2of2: String,
                             lineInfo: String,
@@ -8,4 +10,5 @@ case class cedictFreqObject(storyInfo1of2: String,
                             pinyin: List[String],
                             translation: List[String],
                             traditionalFrequency: List[Int],
-                            simplifiedFrequency: List[Int])
+                            simplifiedFrequency: List[Int],
+                            charFreqObjects: List[charFreqObject])

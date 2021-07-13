@@ -1,7 +1,8 @@
 package ankiFileGenerator.frequencyFileHandling
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
 import inpuSystemLookup.dataClasses.{cedictMaps, cedictObject, frequencyMaps}
+import io.reactivex.Maybe
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -55,6 +56,49 @@ object generateStoryObject {
     }
   }
 
+  def generateCharacterObject(eachCharacter: String,
+                              traditional: Boolean,
+                              cedict: cedictMaps,
+                              frequency: frequencyMaps): charFreqObject = {
+    val cedictMap: Map[String, List[cedictObject]] = if (traditional) {cedict.traditionalMap} else {cedict.simplifiedMap}
+    val cedictResult: Option[List[cedictObject]] = cedictMap.get(eachCharacter)
+
+    val traditionalCharacterList: List[String] = getStringsFromObject(cedictResult, true)
+    val simplifiedCharacterList: List[String] =  getStringsFromObject(cedictResult, false)
+    val pinyin: List[String] = if (cedictResult.isEmpty) List("") else cedictResult.get.map(i => i.pinyin)
+    val translation: List[String] = if (cedictResult.isEmpty) List("") else cedictResult.get.map(i => i.translation)
+    val traditionalFreq: List[Int] = getHanziListFromText(traditionalCharacterList).map(i =>
+    {val optionFreq = frequency.traditional.get(i)
+      if (optionFreq.isEmpty) 0 else optionFreq.get.toInt})
+    val simplifiedFreq: List[Int] = getHanziListFromText(simplifiedCharacterList).map(i =>
+    {val optionFreq = frequency.simplified.get(i)
+      if (optionFreq.isEmpty) 0 else optionFreq.get.toInt})
+
+    val finalResult = new charFreqObject(
+      traditionalCharacterList, simplifiedCharacterList, pinyin, translation, traditionalFreq, simplifiedFreq, traditional)
+    return finalResult
+  }
+  /*
+    (traditionalHanzi: List[String],
+                            simplifiedHanzi: List[String],
+                            pinyin: List[String],
+                            translation: List[String],
+                            traditionalFrequency: List[Int],
+                            simplifiedFrequency: List[Int])
+    */
+  def generateCharacterInfo(word: String,
+                            traditional: Boolean,
+                            cedict: cedictMaps,
+                            frequency: frequencyMaps): List[charFreqObject] = {
+    //split the word and generate character freq info for each character
+    // val stream: List[Int] = text.map(i => i.codePoints.toArray.toList).flatten
+    //    val backToString: List[String] = stream.map(i => Character.toChars(i).mkString)
+    val characters: List[String] = word.codePoints.toArray.toList.map(i => Character.toChars(i).mkString)
+    val characterObjectList: List[charFreqObject] = characters.map(eachCharacter =>
+      generateCharacterObject(eachCharacter, traditional, cedict, frequency))
+    return characterObjectList
+  }
+
   def getNaiveInfoFromWord(word: String,
                            storyInfo1of2: String,
                            storyInfo2of2: String,
@@ -76,8 +120,19 @@ object generateStoryObject {
     {val optionFreq = frequency.simplified.get(i)
       if (optionFreq.isEmpty) 0 else optionFreq.get.toInt})
 
+    val infoOnSingleCharacters: List[charFreqObject] = generateCharacterInfo(word, traditional, cedict, frequency)
     val finalResult: cedictFreqObject =
-      new cedictFreqObject(storyInfo1of2, storyInfo2of2, lineInfo, traditionalWord, simplifiedWord, pinyin, translation, traditionalFreq, simplifiedFreq)
+      new cedictFreqObject(
+        storyInfo1of2,
+        storyInfo2of2,
+        lineInfo,
+        traditionalWord,
+        simplifiedWord,
+        pinyin,
+        translation,
+        traditionalFreq,
+        simplifiedFreq,
+        infoOnSingleCharacters)
     return finalResult
   }
 
@@ -126,6 +181,7 @@ object generateStoryObject {
     val shortStringList: List[String] = getHanziListFromText(List(text)).dropRight(1)
     return shortStringList.mkString
   }
+
 
   private def getHanziListFromText(text: List[String]): List[String] = {
     val stream: List[Int] = text.map(i => i.codePoints.toArray.toList).flatten

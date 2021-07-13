@@ -1,6 +1,7 @@
 package ankiFileGenerator.generateTSVsforAnki
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
+
 import java.io.{File, PrintWriter}
 import scala.collection.mutable.ListBuffer
 import scala.sys.process.buildersToProcess
@@ -158,8 +159,7 @@ object testTSV {
       .replace('\r', ' ')
       .replace(';', ':')
 
-    val resultString: String =
-      "\"" + pinyinInitialInf + "\"" + COLUMNBREAK +
+    val resultString: String = "\"" + pinyinInitialInf + "\"" + COLUMNBREAK +
         "\"" + piniynCurrentLineInf + "\"" + COLUMNBREAK +
         "\"" + pinyinSubsequentInf + "\"" + COLUMNBREAK +
         "\"" + mainLineOnTheBack + "\"" + COLUMNBREAK +
@@ -351,6 +351,20 @@ object testTSV {
     return entriesAddedTogether
   }
 
+  def generateCharFreqObjectInfo(charFreq: charFreqObject, traditional: Boolean): String = {
+    var finalString: String = ""
+    val charString: String = if (traditional) charFreq.traditionalHanzi.mkString("_") else charFreq.simplifiedHanzi.mkString("_")
+    val translationString: String = charFreq.translation.mkString("")
+    return charString ++ " " ++ translationString
+  }
+
+  def generateCharInfosIfLargeWord(singleEntry: cedictFreqObject): String = {
+    val initialString: String = NEWLINE + "---"
+    val traditional: Boolean = singleEntry.charFreqObjects(0).traditional
+    val listOfCharInfo: List[String] = singleEntry.charFreqObjects.map(i => generateCharFreqObjectInfo(i, traditional))
+    return initialString + listOfCharInfo.mkString(initialString) + NEWLINE
+  }
+////if (singleEntry.charFreqObjects.length > 1) "\n" ++ generateCharInfosIfLargeWord(singleEntry) else ""
   private def singleEntryFullInfo(singleEntry: cedictFreqObject): String = {
     val chineseWordTraditional: String = singleEntry.traditionalHanzi.mkString("*")
     val chineseWordSimplified: String = singleEntry.simplifiedHanzi.mkString("*")
@@ -358,13 +372,18 @@ object testTSV {
     val traditionaFrequency: String = singleEntry.traditionalFrequency.mkString(" ")
     val simplifiedFrequency: String = singleEntry.simplifiedFrequency.mkString(" ")
     val translations: String = singleEntry.translation.mkString(" ")
-    val result: String =
-      chineseWordTraditional + " " +
+    var infoFromCharacters: String = "" //if (singleEntry.charFreqObjects.length > 1) "\n" ++ generateCharInfosIfLargeWord(singleEntry) else "" //cedictFreqObject
+    if (singleEntry.charFreqObjects.length > 1) {
+      infoFromCharacters = generateCharInfosIfLargeWord(singleEntry)
+    }
+
+    val result: String = chineseWordTraditional + " " + //ADD_COLOR(chineseWordTraditional, "blue") + " " +
         traditionaFrequency + " " +
-        chineseWordSimplified + " " +
+        chineseWordSimplified + " " + //ADD_COLOR(chineseWordSimplified, "blue") + " " +
         simplifiedFrequency + " " +
         pinyin + " " +
-        translations
+        translations +
+        infoFromCharacters
     return result
   }
 }

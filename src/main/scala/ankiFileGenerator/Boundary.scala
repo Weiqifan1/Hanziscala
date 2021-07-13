@@ -49,7 +49,7 @@ object Boundary {
 
         println("******* create TSV file ********")
 
-        writeTSVfileTEST(finalStory, "testTSV_FileTest2")
+        writeTSVfileTEST(finalStory, "testTSV_FileWithCharacters")
 
         //getAudioFile("真是太遜了", "lykkeAAA")//hello world  //真是太遜了
         val testSecretResult: String = getAudioSecret()
