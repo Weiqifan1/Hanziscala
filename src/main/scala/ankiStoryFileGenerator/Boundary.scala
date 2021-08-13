@@ -1,12 +1,12 @@
-package ankiFileGenerator
+package ankiStoryFileGenerator
 
-import ankiFileGenerator.flashcardDataClasses.{flashcardLineObject, rawLineObject, storyObject}
-import ankiFileGenerator.frequencyFileHandling.generateStoryObject.{createStoryObjectFromFile, parseTextFileAsRawLineList}
-import ankiFileGenerator.generateTSVsforAnki.generateTSVfile.writeTSVfile
-import ankiFileGenerator.frequencyFileHandling.objectSorting
-import ankiFileGenerator.frequencyFileHandling.loadFrequencyFiles.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
-import ankiFileGenerator.generateAudioFiles.generateAudio.{getAudioFile, getAudioSecret}
-import ankiFileGenerator.generateTSVsforAnki.testTSV.writeTSVfileTEST
+import ankiStoryFileGenerator.flashcardDataClasses.{flashcardLineObject, rawLineObject, storyObject}
+import ankiStoryFileGenerator.frequencyFileHandling.generateStoryObject.{createStoryObjectFromFile, parseTextFileAsRawLineList}
+import ankiStoryFileGenerator.generateTSVsforAnki.generateTSVfile.writeTSVfile
+import ankiStoryFileGenerator.frequencyFileHandling.objectSorting
+import ankiStoryFileGenerator.frequencyFileHandling.loadFrequencyFiles.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
+import ankiStoryFileGenerator.generateAudioFiles.generateAudio.{getAudioFile, getAudioSecret}
+import ankiStoryFileGenerator.generateTSVsforAnki.testTSV.writeTSVfileTEST
 
 import java.io.{File, FileInputStream}
 import scala.io.Source

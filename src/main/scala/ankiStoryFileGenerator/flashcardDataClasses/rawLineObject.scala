@@ -1,4 +1,4 @@
-package ankiFileGenerator.flashcardDataClasses
+package ankiStoryFileGenerator.flashcardDataClasses
 
 case class rawLineObject(storyInfo1of2: String,
                          storyInfo2of2: String,

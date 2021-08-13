@@ -1,6 +1,6 @@
 package head
 
-import ankiFileGenerator.Boundary.runAnkiFileGenerator
+import ankiStoryFileGenerator.Boundary.runAnkiFileGenerator
 //import ankiFileGenerator.generateAudioFiles.generateAudio.getAudioFile
 import inpuSystemLookup.Boundary.runInputSystemLookup
 

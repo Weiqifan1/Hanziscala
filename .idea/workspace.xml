@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-13-12.51: ableToIntersperceTwoSetsOfCards">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/flashcardDataClasses/charFreqObject.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords">
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputFiles/testTSV_File.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/Boundary.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/flashcardDataClasses/cedictFreqObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/flashcardDataClasses/cedictFreqObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/generateStoryObject.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/frequencyFileHandling/generateStoryObject.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateTSVsforAnki/testTSV.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiFileGenerator/generateTSVsforAnki/testTSV.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,17 +126,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="scalaRepl" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Hanziscala" />
       <option name="allowRunningInParallel" value="false" />
@@ -207,7 +191,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="" />
-      <changelist id="" name="2021-07-13-11.03: shelvedGeneratedFiles" comment="" />
       <created>1619535726124</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -235,7 +218,9 @@
       <workItem from="1623571773586" duration="11860000" />
       <workItem from="1625593692705" duration="2124000" />
       <workItem from="1625664831884" duration="7481000" />
-      <workItem from="1626168098531" duration="16876000" />
+      <workItem from="1626168098531" duration="17140000" />
+      <workItem from="1626517702148" duration="136000" />
+      <workItem from="1628872728336" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -461,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626173483550</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords">
+      <created>1626197407471</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1626197407471</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="simpList virker nu. jeg skal refakturere" />
     <MESSAGE value="cedict map works" />
     <MESSAGE value="added jar.xml files. These should be in git ignore" />
     <MESSAGE value="can print to screen" />
@@ -505,7 +496,8 @@
     <MESSAGE value="2021-07-06-21.55: ProevIbm_KlarTilAtSkriveNytEndpoint" />
     <MESSAGE value="2021-07-07-23.18: text to speech works!" />
     <MESSAGE value="2021-07-13-12.51: ableToIntersperceTwoSetsOfCards" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-07-13-12.51: ableToIntersperceTwoSetsOfCards" />
+    <MESSAGE value="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

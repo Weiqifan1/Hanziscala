@@ -1,4 +1,4 @@
-package ankiFileGenerator.flashcardDataClasses
+package ankiStoryFileGenerator.flashcardDataClasses
 
 case class storyObject(traditional: Boolean,
                        storyInfo1of2: String,

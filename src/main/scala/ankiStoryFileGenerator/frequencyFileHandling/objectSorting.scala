@@ -1,6 +1,6 @@
-package ankiFileGenerator.frequencyFileHandling
+package ankiStoryFileGenerator.frequencyFileHandling
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiStoryFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
 
 import scala.collection.mutable.ListBuffer
 

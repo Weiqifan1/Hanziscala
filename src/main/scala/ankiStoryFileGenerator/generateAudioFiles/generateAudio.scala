@@ -1,4 +1,4 @@
-package ankiFileGenerator.generateAudioFiles
+package ankiStoryFileGenerator.generateAudioFiles
 
 import com.ibm.cloud.sdk.core.security.IamAuthenticator
 import com.ibm.watson.text_to_speech.v1.TextToSpeech

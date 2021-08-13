@@ -1,4 +1,4 @@
-package ankiFileGenerator.flashcardDataClasses
+package ankiStoryFileGenerator.flashcardDataClasses
 
 import io.reactivex.Maybe
 

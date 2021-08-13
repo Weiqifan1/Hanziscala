@@ -1,4 +1,4 @@
-package ankiFileGenerator.flashcardDataClasses
+package ankiStoryFileGenerator.flashcardDataClasses
 
 case class flashcardLineObject(lineObj: rawLineObject,
                                newCedictEntries: List[cedictFreqObject],

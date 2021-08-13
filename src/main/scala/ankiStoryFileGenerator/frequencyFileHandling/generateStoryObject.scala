@@ -1,6 +1,6 @@
-package ankiFileGenerator.frequencyFileHandling
+package ankiStoryFileGenerator.frequencyFileHandling
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiStoryFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
 import inpuSystemLookup.dataClasses.{cedictMaps, cedictObject, frequencyMaps}
 import io.reactivex.Maybe
 

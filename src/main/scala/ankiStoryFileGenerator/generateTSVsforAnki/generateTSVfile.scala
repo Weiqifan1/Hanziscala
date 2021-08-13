@@ -1,6 +1,6 @@
-package ankiFileGenerator.generateTSVsforAnki
+package ankiStoryFileGenerator.generateTSVsforAnki
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiStoryFileGenerator.flashcardDataClasses.{cedictFreqObject, flashcardLineObject, rawLineObject, storyObject}
 
 import java.io.{File, PrintWriter}
 

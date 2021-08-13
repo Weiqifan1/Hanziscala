@@ -1,4 +1,4 @@
-package ankiFileGenerator.frequencyFileHandling
+package ankiStoryFileGenerator.frequencyFileHandling
 
 import inpuSystemLookup.dataClasses.{cedictMaps, frequencyMaps}
 

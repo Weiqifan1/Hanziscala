@@ -1,6 +1,6 @@
-package ankiFileGenerator.generateTSVsforAnki
+package ankiStoryFileGenerator.generateTSVsforAnki
 
-import ankiFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
+import ankiStoryFileGenerator.flashcardDataClasses.{cedictFreqObject, charFreqObject, flashcardLineObject, rawLineObject, storyObject}
 
 import java.io.{File, PrintWriter}
 import scala.collection.mutable.ListBuffer
