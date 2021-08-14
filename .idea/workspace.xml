@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-08-14-11.27: copied files to heisig folder and added heisig resources">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/heisigResourcesRaw/HeisigAllBooks2021BackupNotAllInfo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/heisigDataClasses/heisigRawResourceCollection.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/heisigDataClasses/heisigRawResourceItem.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigAllBookResourceRawFile.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-08-14-14.40: create an object for the heisig raw lines">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/heisigDataClasses/heisigRawStoriesUserInputItem.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigStoriesUserInputRawFile.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputSystemFilesRaw/麻辣女孩01_01b.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputStories/麻辣女孩01_01b.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputSystemFilesRaw/麻辣女孩01_02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputStories/麻辣女孩01_02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputSystemFilesRaw/麻辣女孩01_03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputStories/麻辣女孩01_03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputSystemFilesRaw/麻辣女孩01_04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputStories/麻辣女孩01_04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputSystemFilesRaw/麻辣女孩01_05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputStories/麻辣女孩01_05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/heisigResourcesRaw/ChrLykke_stories_backupcopy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInputHeisigFiles/ChrLykke_stories_backupcopy.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +110,8 @@
       <recent name="$PROJECT_DIR$/src/main/inpuSystemLookup" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/userInputHeisigFiles" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/scala" />
     </key>
   </component>
@@ -225,7 +231,7 @@
       <workItem from="1626168098531" duration="17140000" />
       <workItem from="1626517702148" duration="136000" />
       <workItem from="1628872728336" duration="3329000" />
-      <workItem from="1628933122152" duration="9031000" />
+      <workItem from="1628933122152" duration="23558000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -472,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628933339080</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="2021-08-14-14.40: create an object for the heisig raw lines">
+      <created>1628944885723</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1628944885723</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +504,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="can print to screen" />
     <MESSAGE value="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi" />
     <MESSAGE value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
     <MESSAGE value="alt ser ud til at virke. jeg kan nu slaa tegn og koder op. Jeg skal nu udvidde koden til at kunne haandtere en form for regex" />
@@ -516,217 +528,31 @@
     <MESSAGE value="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords" />
     <MESSAGE value="2021-08-13-19.24: changed the name of the Anki(Story)FielGenerator Folder" />
     <MESSAGE value="2021-08-14-11.27: copied files to heisig folder and added heisig resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-08-14-11.27: copied files to heisig folder and added heisig resources" />
+    <MESSAGE value="2021-08-14-14.40: create an object for the heisig raw lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-08-14-14.40: create an object for the heisig raw lines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>62</line>
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>63</line>
-          <option name="timeStamp" value="185" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>59</line>
-          <option name="timeStamp" value="188" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>44</line>
-          <option name="timeStamp" value="192" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>45</line>
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>40</line>
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>52</line>
-          <option name="timeStamp" value="196" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>56</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/Boundary.scala</url>
-          <line>29</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>14</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/frequencyFileHandling/prepareTextHandlingMethods.scala</url>
-          <line>15</line>
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>17</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>34</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>40</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>41</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>35</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/Boundary.scala</url>
-          <line>54</line>
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>50</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/Boundary.scala</url>
-          <line>57</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateAudioFiles/generateAudio.scala</url>
-          <line>58</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>90</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>16</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>49</line>
-          <option name="timeStamp" value="222" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>50</line>
-          <option name="timeStamp" value="223" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>108</line>
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>317</line>
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>336</line>
-          <option name="timeStamp" value="227" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>348</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="229" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>332</line>
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>14</line>
-          <option name="timeStamp" value="235" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>48</line>
-          <option name="timeStamp" value="236" />
-        </line-breakpoint>
-        <line-breakpoint type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>95</line>
-          <option name="timeStamp" value="242" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
           <line>161</line>
           <option name="timeStamp" value="245" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>168</line>
-          <option name="timeStamp" value="246" />
+        <line-breakpoint type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigStoriesUserInputRawFile.scala</url>
+          <line>31</line>
+          <option name="timeStamp" value="282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>146</line>
-          <option name="timeStamp" value="248" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigStoriesUserInputRawFile.scala</url>
+          <line>14</line>
+          <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>343</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="250" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiStoryFileGenerator/generateTSVsforAnki/testTSV.scala</url>
-          <line>344</line>
-          <option name="timeStamp" value="251" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala</url>
-          <line>19</line>
-          <option name="timeStamp" value="253" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigAllBookResourceRawFile.scala</url>
-          <line>19</line>
-          <option name="timeStamp" value="255" />
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigStoriesUserInputRawFile.scala</url>
+          <line>12</line>
+          <option name="timeStamp" value="287" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
