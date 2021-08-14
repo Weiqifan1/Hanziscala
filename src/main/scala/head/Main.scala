@@ -1,5 +1,6 @@
 package head
 
+import ankiHeisigFileGenerator.Boundary.runAnkiHeisigFileGenerator
 import ankiStoryFileGenerator.Boundary.runAnkiFileGenerator
 //import ankiFileGenerator.generateAudioFiles.generateAudio.getAudioFile
 import inpuSystemLookup.Boundary.runInputSystemLookup
@@ -8,7 +9,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     //runInputSystemLookup()
-    runAnkiFileGenerator()
+    runAnkiHeisigFileGenerator()
 
     //println("hej der")
 
