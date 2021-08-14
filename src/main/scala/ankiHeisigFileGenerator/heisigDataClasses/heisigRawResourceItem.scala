@@ -1,0 +1,22 @@
+package ankiHeisigFileGenerator.heisigDataClasses
+
+case class heisigRawResourceItem(traditionalRTHNumber: Int,
+                                 simplifiedRSHNumber: Int,
+                                 kanjiRTKNumber: Int,
+                                 traditionalChar: String,
+                                 simplifiedChar: String,
+                                 kanjiChar: String,
+                                 hanziPartOfSpeech: String,
+                                 traditionalKeyword: String,
+                                 simplifiedKeyword: String,
+                                 kanjiKeyword: String,
+                                 hanziFirstReading: String,
+                                 hanziSecondReading: String,
+                                 traditionalLesson: String,
+                                 simplifiedLesson: String,
+                                 kanjiLesson: String,
+                                 checkKanjiAndHanzi: String,
+                                 checkSimplifiedAndTraditional: String,
+                                 compareKeywordsKanjiAndTraditional: String,
+                                 compareKeywordsSimplifiedAndTraditional: String,
+                                 visualCheckKanjiAndHanzi: String)

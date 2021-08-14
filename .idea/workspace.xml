@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-08-13-19.24: changed the name of the Anki(Story)FielGenerator Folder">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/flashcardDataClasses/cedictFreqObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/flashcardDataClasses/charFreqObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/flashcardDataClasses/flashcardLineObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/flashcardDataClasses/rawLineObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/flashcardDataClasses/storyObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/frequencyFileHandling/generateStoryObject.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/frequencyFileHandling/loadFrequencyFiles.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/frequencyFileHandling/objectSorting.scala" afterDir="false" />
+    <list default="true" id="6f0fb244-775d-4538-b85f-869d535193a4" name="Default Changelist" comment="2021-08-14-11.27: copied files to heisig folder and added heisig resources">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/heisigResourcesRaw/HeisigAllBooks2021BackupNotAllInfo.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/heisigDataClasses/heisigRawResourceCollection.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/heisigDataClasses/heisigRawResourceItem.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigAllBookResourceRawFile.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/head/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/head/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +85,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/heisigResourcesRaw" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -104,11 +99,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/heisigResourcesRaw" />
       <recent name="$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/scala/ankiFileGenerator" />
       <recent name="$PROJECT_DIR$/src/main/inpuSystemLookup" />
-      <recent name="$PROJECT_DIR$/src/main/resources/frequencyfiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/scala" />
@@ -230,6 +225,7 @@
       <workItem from="1626168098531" duration="17140000" />
       <workItem from="1626517702148" duration="136000" />
       <workItem from="1628872728336" duration="3329000" />
+      <workItem from="1628933122152" duration="9031000" />
     </task>
     <task id="LOCAL-00001" summary="renamed directory of main method">
       <created>1619550256081</created>
@@ -469,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628875573790</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="2021-08-14-11.27: copied files to heisig folder and added heisig resources">
+      <created>1628933339080</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1628933339080</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added jar.xml files. These should be in git ignore" />
     <MESSAGE value="can print to screen" />
     <MESSAGE value="added printInfo method for hanzi. Need to create method to destinguish codes from hanzi" />
     <MESSAGE value="fixed byteordermark bug, the output doesnt have alternative codes for the characters. this needs to be fixed" />
@@ -513,7 +515,8 @@
     <MESSAGE value="2021-07-13-12.51: ableToIntersperceTwoSetsOfCards" />
     <MESSAGE value="2021-07-13-19.26: addedInfoOnTheCharactersInLargeWords" />
     <MESSAGE value="2021-08-13-19.24: changed the name of the Anki(Story)FielGenerator Folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-08-13-19.24: changed the name of the Anki(Story)FielGenerator Folder" />
+    <MESSAGE value="2021-08-14-11.27: copied files to heisig folder and added heisig resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-08-14-11.27: copied files to heisig folder and added heisig resources" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -717,8 +720,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/Boundary.scala</url>
-          <line>17</line>
+          <line>19</line>
           <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/ankiHeisigFileGenerator/readHeisigResources/readHeisigAllBookResourceRawFile.scala</url>
+          <line>19</line>
+          <option name="timeStamp" value="255" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

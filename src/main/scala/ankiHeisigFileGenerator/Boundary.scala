@@ -1,6 +1,8 @@
 package ankiHeisigFileGenerator
 
 import ankiHeisigFileGenerator.frequencyFileHandling.loadFrequencyFiles.{readCedictMapsFromFile, readJundaAndTzaiMapsFromFile}
+import ankiHeisigFileGenerator.heisigDataClasses.heisigRawResourceCollection
+import ankiHeisigFileGenerator.readHeisigResources.readHeisigAllBookResourceRawFile.readHeisigResourceRawFile
 
 object Boundary {
 
@@ -17,6 +19,9 @@ object Boundary {
 
     println("trad: *************************************\n"  + testlook.get(0).translation)
     println("simp: *************************************\n" + testsimp.get(0).translation)
+
+    val heisig: heisigRawResourceCollection = readHeisigResourceRawFile("src/main/resources/heisigResourcesRaw/HeisigAllBooks2021BackupNotAllInfo.csv")
+
 
     println("end of heisig")
   }
