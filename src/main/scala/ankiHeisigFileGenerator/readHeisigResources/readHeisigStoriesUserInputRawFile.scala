@@ -17,7 +17,8 @@ object readHeisigStoriesUserInputRawFile {
 
   private def parseHeisigUserInputResourceLines(fileContent: String): List[heisigRawStoriesUserInputItem] = {
     val nestedSplitLines: ListBuffer[ListBuffer[String]] = splitHeisigUserInputStoryLines(fileContent)
-    val heisigUseritemList: List[heisigRawStoriesUserInputItem] = nestedSplitLines.map(each => createHeisigStpryBufferItem(each)).toList
+    val heisigUseritemList: List[heisigRawStoriesUserInputItem] = nestedSplitLines.map(
+      each => createHeisigStpryBufferItem(each)).toList
     return heisigUseritemList
   }
 
