@@ -1,6 +1,6 @@
 package ankiHeisigFileGenerator.readHeisigResources
 
-import ankiHeisigFileGenerator.heisigDataClasses.{heisigRawResourceCollection, heisigRawResourceItem}
+import ankiHeisigFileGenerator.heisigDataClasses.{heisigRawResourceCollection, heisigRawResourceItem, heisigResource}
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source

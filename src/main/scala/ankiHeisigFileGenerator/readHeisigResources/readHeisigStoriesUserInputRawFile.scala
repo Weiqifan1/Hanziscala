@@ -9,19 +9,20 @@ import scala.util.matching.Regex
 object readHeisigStoriesUserInputRawFile {
 
 
-  def readHeisigStoriesUserInputRawFile(filePath: String): List[heisigRawStoriesUserInputItem] = {
+  def readHeisigStoriesTradHanziUserInputRawFile(filePath: String): List[List[String]] = {
     val fileContent: String = Source.fromFile(filePath)("UTF-8").mkString
-    val splitText: List[heisigRawStoriesUserInputItem] =  parseHeisigUserInputResourceLines(fileContent)
-    return splitText
+    //val splitText: List[heisigRawStoriesUserInputItem] =  parseHeisigUserInputResourceLines(fileContent)
+    val nestedSplitLines: List[List[String]] = splitHeisigUserInputStoryLines(fileContent)
+    return nestedSplitLines
   }
-
+/*
   private def parseHeisigUserInputResourceLines(fileContent: String): List[heisigRawStoriesUserInputItem] = {
     val nestedSplitLines: ListBuffer[ListBuffer[String]] = splitHeisigUserInputStoryLines(fileContent)
     val heisigUseritemList: List[heisigRawStoriesUserInputItem] = nestedSplitLines.map(
       each => createHeisigStpryBufferItem(each)).toList
     return heisigUseritemList
   }
-
+*/
   /*                                    (framenr: Int,
                                          character: String,
                                          keyword: String,
@@ -56,23 +57,25 @@ object readHeisigStoriesUserInputRawFile {
     return finalInteger;
   }
 
-  private def splitHeisigUserInputStoryLines(fileContent: String): ListBuffer[ListBuffer[String]] = {
+  private def splitHeisigUserInputStoryLines(fileContent: String): List[List[String]] = {
     val firstSplit: List[String] = fileContent.split("\r\n").toList
     val trymatcher: Regex = "^[0-9]+,\\D,.*".r
     val mutableNested: ListBuffer[ListBuffer[String]] = createMutableNestedList(firstSplit, trymatcher)
     val mergeLists: List[String] = mutableNested.map(nestedList => {nestedList.mkString("\n")}).toList
-    val nested: List[ListBuffer[String]] = mergeLists.map(each => splitToGetNumberAndCharacter(each))
-    return new ListBuffer[ListBuffer[String]].addAll(nested)
+    val nested: List[List[String]] = mergeLists.map(each => splitToGetNumberAndCharacter(each))
+    //val finalNestedList: List[List[String]] =
+    //return new List[List[String]].addAll(nested)
+    return nested
   }
 
-  private def splitToGetNumberAndCharacter(heisigUserInputStoryString: String): ListBuffer[String] = {
+  private def splitToGetNumberAndCharacter(heisigUserInputStoryString: String): List[String] = {
     val split: List[String] = heisigUserInputStoryString.split(",").toList
     val mutable: ListBuffer[String] = new ListBuffer[String]
     mutable.addOne(split(0))
     mutable.addOne(split(1))
     mutable.addOne(split(2))
     mutable.addOne(split.drop(3).mkString(","))
-    return mutable
+    return mutable.toList
   }
 
 
